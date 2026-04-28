@@ -81,7 +81,7 @@
   <div class="hero-content">
     <div class="hero-badge"><span class="bdot"></span>Signal Compression</div>
     <h1>Lossless compression<br>for raw radar and<br><em>RF signal data.</em></h1>
-    <p class="hero-sub">Keep every signal. Reduce storage and transfer costs by up to 87%. NOEMA delivers up to 7.7× lossless compression with bit-exact reconstruction..</p>
+    <p class="hero-sub">Keep every signal. Reduce storage and transfer costs by up to 87%. NOEMA delivers up to 7.7x lossless compression with bit-exact reconstruction.</p>
     <div class="hero-actions">
       <button class="btn-white" onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})">Request access</button>
       <button class="btn-outline" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">How it works &rarr;</button>
@@ -142,9 +142,13 @@
     <!-- INTERACTIVE PIPELINE -->
     <div class="pipeline-wrap reveal">
       <div class="pipeline-flow">
-        <div class="pipe-node"><div class="node-label">Signal source</div><div class="node-val">800 MB</div></div>
+        <div class="pipe-node">
+          <div class="node-label">Your dataset</div>
+          <div class="node-val" id="pipe-source">50 TB</div>
+          <div class="node-note">raw archive</div>
+        </div>
         <div class="pipe-arrow">&rarr;</div>
-        <div class="pipe-node"><div class="node-label">Intake</div><div class="node-val">800 MB</div></div>
+        <div class="pipe-node"><div class="node-label">Intake</div><div class="node-val" id="pipe-intake">50 TB</div><div class="node-note">unchanged</div></div>
         <div class="pipe-arrow">&rarr;</div>
         <div class="pipe-node hl">
           <div class="node-label">NOEMA</div>
@@ -154,13 +158,18 @@
         <div class="pipe-arrow">&rarr;</div>
         <div class="pipe-node">
           <div class="node-label">Transmit / Store</div>
-          <div class="node-val">103.9 MB</div>
-          <div class="node-note">87% saved</div>
+          <div class="node-val" id="pipe-compressed">6.5 TB</div>
+          <div class="node-note" id="pipe-saved">87% saved</div>
         </div>
         <div class="pipe-arrow">&rarr;</div>
-        <div class="pipe-node"><div class="node-label">Reconstruct</div><div class="node-val">800 MB</div><div class="node-note">bit-exact</div></div>
+        <div class="pipe-node"><div class="node-label">Reconstruct</div><div class="node-val" id="pipe-reconstruct">50 TB</div><div class="node-note">bit-exact</div></div>
       </div>
-      <div class="validation-note">Validated on real-world SAR and RF captures</div>
+      <div class="ratio-slider">
+        <label>Your dataset size</label>
+        <input type="range" id="dataset-slider" min="0" max="100" step="1" value="68">
+        <span class="ratio-value" id="dataset-display">50 TB</span>
+      </div>
+      <div class="validation-note">Validated on real-world SAR and RF captures &middot; 7.7x lossless &middot; Bit-exact reconstruction</div>
     </div>
   </div>
 

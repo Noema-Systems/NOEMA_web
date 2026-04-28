@@ -1,3 +1,47 @@
+/* DATASET SIZE CALCULATOR — log scale 10 GB to 100 TB */
+(function(){
+  const slider = document.getElementById('dataset-slider');
+  if(!slider) return;
+
+  // Log scale: slider 0-100 maps to 10 GB - 100 TB
+  const MIN_GB = 10;
+  const MAX_GB = 100 * 1024; // 100 TB in GB
+  const RATIO  = 7.7;
+
+  function sliderToGB(val) {
+    const logMin = Math.log10(MIN_GB);
+    const logMax = Math.log10(MAX_GB);
+    return Math.pow(10, logMin + (val / 100) * (logMax - logMin));
+  }
+
+  function formatSize(gb) {
+    if (gb >= 1024) {
+      const tb = gb / 1024;
+      return tb >= 10 ? tb.toFixed(0) + ' TB' : tb.toFixed(1) + ' TB';
+    }
+    return gb >= 10 ? gb.toFixed(0) + ' GB' : gb.toFixed(1) + ' GB';
+  }
+
+  function update() {
+    const gb      = sliderToGB(parseFloat(slider.value));
+    const compGb  = gb / RATIO;
+    const savedPct = ((gb - compGb) / gb * 100).toFixed(0);
+
+    const srcFmt  = formatSize(gb);
+    const cmpFmt  = formatSize(compGb);
+
+    document.getElementById('pipe-source').textContent      = srcFmt;
+    document.getElementById('pipe-intake').textContent      = srcFmt;
+    document.getElementById('pipe-compressed').textContent  = cmpFmt;
+    document.getElementById('pipe-saved').textContent       = savedPct + '% saved';
+    document.getElementById('pipe-reconstruct').textContent = srcFmt;
+    document.getElementById('dataset-display').textContent  = srcFmt;
+  }
+
+  slider.addEventListener('input', update);
+  update();
+})();
+
 /* SCROLL REVEAL */
 const ro = new IntersectionObserver(entries => {
   entries.forEach((e, i) => {
