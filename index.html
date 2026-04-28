@@ -139,29 +139,29 @@
       </div>
     </div>
 
-    <!-- INTERACTIVE PIPELINE -->
     <div class="pipeline-wrap reveal">
-  <div class="pipeline-flow">
-    <div class="pipe-node"><div class="node-label">Signal source</div><div class="node-val">800 MB</div></div>
-    <div class="pipe-arrow">&rarr;</div>
-    <div class="pipe-node"><div class="node-label">Intake</div><div class="node-val">800 MB</div></div>
-    <div class="pipe-arrow">&rarr;</div>
-    <div class="pipe-node hl">
-      <div class="node-label">NOEMA</div>
-      <div class="node-val">7.7x</div>
-      <div class="node-note">compression</div>
+      <div class="pipeline-flow">
+        <div class="pipe-node"><div class="node-label">Signal source</div><div class="node-val">800 MB</div></div>
+        <div class="pipe-arrow">&rarr;</div>
+        <div class="pipe-node"><div class="node-label">Intake</div><div class="node-val">800 MB</div></div>
+        <div class="pipe-arrow">&rarr;</div>
+        <div class="pipe-node hl">
+          <div class="node-label">NOEMA</div>
+          <div class="node-val">7.7x</div>
+          <div class="node-note">compression</div>
+        </div>
+        <div class="pipe-arrow">&rarr;</div>
+        <div class="pipe-node">
+          <div class="node-label">Transmit / Store</div>
+          <div class="node-val">103.9 MB</div>
+          <div class="node-note">87% saved</div>
+        </div>
+        <div class="pipe-arrow">&rarr;</div>
+        <div class="pipe-node"><div class="node-label">Reconstruct</div><div class="node-val">800 MB</div><div class="node-note">bit-exact</div></div>
+      </div>
+      <div class="validation-note">Validated on real-world SAR and RF captures</div>
     </div>
-    <div class="pipe-arrow">&rarr;</div>
-    <div class="pipe-node">
-      <div class="node-label">Transmit / Store</div>
-      <div class="node-val">103.9 MB</div>
-      <div class="node-note">87% saved</div>
-    </div>
-    <div class="pipe-arrow">&rarr;</div>
-    <div class="pipe-node"><div class="node-label">Reconstruct</div><div class="node-val">800 MB</div><div class="node-note">bit-exact</div></div>
-  </div>
-  <div class="validation-note">Validated on real-world SAR and RF captures</div>
-</div>
+  </div><!-- /#how -->
 
   <!-- WHO IT IS FOR -->
   <div id="for">
@@ -173,7 +173,7 @@
     <div class="cards-grid">
       <div class="who-card reveal">
         <div class="card-img-box" style="--d:0s">
-          <img src="images/av1.webp" alt="Autonomous vehicle testing" loading="lazy">
+          <img src="images/av1.webp" alt="Autonomous vehicle testing">
         </div>
         <div class="card-body">
           <div class="card-cat">Autonomous Vehicles</div>
@@ -183,7 +183,7 @@
       </div>
       <div class="who-card reveal">
         <div class="card-img-box" style="--d:1.8s">
-          <img src="images/sat1.webp" alt="Satellite in orbit" loading="lazy">
+          <img src="images/sat1.webp" alt="Satellite in orbit">
         </div>
         <div class="card-body">
           <div class="card-cat">Satellite and SAR</div>
@@ -193,7 +193,7 @@
       </div>
       <div class="who-card reveal">
         <div class="card-img-box" style="--d:3.6s">
-          <img src="images/sigint1.webp" alt="Tactical operations" loading="lazy">
+          <img src="images/sigint1.webp" alt="Tactical operations">
         </div>
         <div class="card-body">
           <div class="card-cat">Defense and SIGINT</div>
@@ -202,7 +202,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div><!-- /#for -->
 
   <!-- FIRST PRINCIPLES -->
   <div id="principles">
@@ -216,7 +216,7 @@
       <div class="principle reveal"><h4>Lossless means nothing is approximated. Ever.</h4><p>NOEMA does not trade fidelity for compression ratio. Every bit of the original signal is preserved and verifiable on output.</p></div>
       <div class="principle reveal"><h4>Built for teams that cannot afford to lose the past.</h4><p>The insight you do not yet know you will need is already in your data. NOEMA makes keeping it the same cost as keeping almost nothing.</p></div>
     </div>
-  </div>
+  </div><!-- /#principles -->
 
   <!-- TRY IT -->
   <div id="pilot">
@@ -262,16 +262,16 @@
         </button>
       </div>
     </div>
-  </div>
+  </div><!-- /#pilot -->
 
   <!-- FORM -->
   <div id="signup">
     <div class="form-section" style="border-top: none; padding: 2.5rem 0 2rem;">
-      <div class="form-left reveal">
+      <div class="form-left">
         <h2>Request access</h2>
         <p>Human response within 24 hours. No automated sequences. Priority given to AV infrastructure teams, satellite and ground station operators, and defense organizations.</p>
       </div>
-      <div class="reveal">
+      <div>
         <form id="accessForm">
           <div class="f-row">
             <div class="f-group"><label class="f-label">First name</label><input class="fi" type="text" placeholder="First name" required></div>
@@ -300,7 +300,7 @@
         <div id="formSuccess"><p>Request received.</p><small>We will be in touch within 24 hours.</small></div>
       </div>
     </div>
-  </div>
+  </div><!-- /#signup -->
 </main>
 
 <footer>
