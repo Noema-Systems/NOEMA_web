@@ -284,14 +284,14 @@
       <div class="reveal">
         <form id="accessForm" action="https://formspree.io/f/myklvjqy" method="POST">
           <div class="f-row">
-            <div class="f-group"><label class="f-label">First name</label><input class="fi" type="text" placeholder="First name" required></div>
-            <div class="f-group"><label class="f-label">Last name</label><input class="fi" type="text" placeholder="Last name" required></div>
+            <div class="f-group"><label class="f-label">First name</label><input class="fi" type="text" name="first_name" placeholder="First name" required></div>
+            <div class="f-group"><label class="f-label">Last name</label><input class="fi" type="text" name="last_name" placeholder="Last name" required></div>
           </div>
-          <div class="f-group"><label class="f-label">Work email</label><input class="fi" type="email" placeholder="you@org.com" required></div>
-          <div class="f-group"><label class="f-label">Organisation</label><input class="fi" type="text" placeholder="Organization name"></div>
+          <div class="f-group"><label class="f-label">Work email</label><input class="fi" type="email" name="email" placeholder="you@org.com" required></div>
+          <div class="f-group"><label class="f-label">Organisation</label><input class="fi" type="text" name="organisation" placeholder="Organization name"></div>
           <div class="f-group">
             <label class="f-label">Sector</label>
-            <select class="fs" required>
+            <select class="fs" name="sector" required>
               <option value="" disabled selected>Select sector</option>
               <option>Autonomous Vehicles</option>
               <option>Ground station operator</option>
@@ -303,7 +303,7 @@
               <option>Other</option>
             </select>
           </div>
-          <div class="f-group"><label class="f-label">Signal type or use case</label><input class="fi" type="text" placeholder="e.g. SAR Level-0, radar ADC, wideband I/Q"></div>
+          <div class="f-group"><label class="f-label">Signal type or use case</label><input class="fi" type="text" name="signal_type" placeholder="e.g. SAR Level-0, radar ADC, wideband I/Q"></div>
           <button type="submit" class="fsub">Request access &rarr;</button>
           <p class="fnote">Human response within 24 hours &middot; No automated sequences</p>
         </form>
