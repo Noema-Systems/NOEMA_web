@@ -3,9 +3,8 @@
   const slider = document.getElementById('dataset-slider');
   if(!slider) return;
 
-  // Log scale: slider 0-100 maps to 10 GB - 100 TB
   const MIN_GB = 10;
-  const MAX_GB = 100 * 1024; // 100 TB in GB
+  const MAX_GB = 100 * 1024;
   const RATIO  = 7.7;
 
   function sliderToGB(val) {
@@ -26,10 +25,8 @@
     const gb      = sliderToGB(parseFloat(slider.value));
     const compGb  = gb / RATIO;
     const savedPct = ((gb - compGb) / gb * 100).toFixed(0);
-
     const srcFmt  = formatSize(gb);
     const cmpFmt  = formatSize(compGb);
-
     document.getElementById('pipe-source').textContent      = srcFmt;
     document.getElementById('pipe-intake').textContent      = srcFmt;
     document.getElementById('pipe-compressed').textContent  = cmpFmt;
@@ -60,7 +57,7 @@ if (form) {
     submitButton.disabled = true;
     submitButton.innerHTML = 'Sending...';
     try {
-      const response = await fetch(form.action, {
+      const response = await fetch('https://formspree.io/f/myklvjqy', {
         method: 'POST',
         body: new FormData(form),
         headers: { 'Accept': 'application/json' }
