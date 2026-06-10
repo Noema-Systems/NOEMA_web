@@ -5,7 +5,9 @@
 
   const MIN_GB = 10;
   const MAX_GB = 100 * 1024;
-  const RATIO  = 7.7;
+
+  const LOW_RATIO = 2.3;
+  const HIGH_RATIO = 8.6;
 
   function sliderToGB(val) {
     const logMin = Math.log10(MIN_GB);
@@ -22,17 +24,23 @@
   }
 
   function update() {
-    const gb      = sliderToGB(parseFloat(slider.value));
-    const compGb  = gb / RATIO;
-    const savedPct = ((gb - compGb) / gb * 100).toFixed(0);
-    const srcFmt  = formatSize(gb);
-    const cmpFmt  = formatSize(compGb);
-    document.getElementById('pipe-source').textContent      = srcFmt;
-    document.getElementById('pipe-intake').textContent      = srcFmt;
-    document.getElementById('pipe-compressed').textContent  = cmpFmt;
-    document.getElementById('pipe-saved').textContent       = savedPct + '% saved';
+    const gb = sliderToGB(parseFloat(slider.value));
+
+    const compressedHigh = gb / LOW_RATIO;   // larger compressed output
+    const compressedLow  = gb / HIGH_RATIO;  // smaller compressed output
+
+    const savedLowPct  = ((1 - 1 / LOW_RATIO) * 100).toFixed(0);
+    const savedHighPct = ((1 - 1 / HIGH_RATIO) * 100).toFixed(0);
+
+    const srcFmt = formatSize(gb);
+    const cmpFmt = `${formatSize(compressedHigh)}-${formatSize(compressedLow)}`;
+
+    document.getElementById('pipe-source').textContent = srcFmt;
+    document.getElementById('pipe-intake').textContent = srcFmt;
+    document.getElementById('pipe-compressed').textContent = cmpFmt;
+    document.getElementById('pipe-saved').textContent = `${savedLowPct}-${savedHighPct}% saved`;
     document.getElementById('pipe-reconstruct').textContent = srcFmt;
-    document.getElementById('dataset-display').textContent  = srcFmt;
+    document.getElementById('dataset-display').textContent = srcFmt;
   }
 
   slider.addEventListener('input', update);
