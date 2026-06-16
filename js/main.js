@@ -33,7 +33,7 @@
     const savedHighPct = ((1 - 1 / HIGH_RATIO) * 100).toFixed(0);
 
     const srcFmt = formatSize(gb);
-    const cmpFmt = `${formatSize(compressedHigh)}-${formatSize(compressedLow)}`;
+    const cmpFmt = `${formatSize(compressedHigh)} - ${formatSize(compressedLow)}`;
 
     document.getElementById('pipe-source').textContent = srcFmt;
     document.getElementById('pipe-intake').textContent = srcFmt;
