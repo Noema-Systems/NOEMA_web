@@ -498,7 +498,7 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.25); }
 .principle-diagram {
   display: flex; align-items: center; justify-content: center;
 }
-.principle-diagram svg { width: 100%; height: auto; max-width: 240px; }
+.principle-diagram svg { width: 180px; height: auto; max-width: 100%; }
 .pd-mono {
   font-family: var(--mono); font-size: 9px; font-weight: 500;
   letter-spacing: 0.04em;
@@ -889,7 +889,7 @@ footer {
   .principle       { padding: 1.5rem 1.25rem; grid-template-columns: 1fr; gap: 1.25rem; }
   .principle-text h4    { font-size: 1.6rem; margin-bottom: 0.5rem; line-height: 1.25; }
   .principle-text p     { font-size: 0.82rem; line-height: 1.55; }
-  .principle-diagram svg { max-width: 200px; }
+  .principle-diagram svg { max-width: 160px; }
 
   /* --- Pipeline: vertical stack with rotated arrows --- */
   .pipeline-wrap {
