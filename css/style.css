@@ -481,17 +481,31 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.25); }
   margin: 1.25rem 0;
 }
 .principle {
-  background: var(--surface); padding: 3rem;
+  background: var(--surface); padding: 2.75rem;
   transition: background 0.35s;
+  display: grid; grid-template-columns: 1.1fr 1fr;
+  gap: 2rem; align-items: center;
 }
 .principle:hover { background: var(--card); }
-.principle h4 {
+.principle-text h4 {
   font-family: var(--serif); font-size: 2rem; font-weight: 500;
   color: var(--bright); margin-bottom: 0.85rem; line-height: 1.25;
 }
-.principle p {
+.principle-text p {
   font-family: var(--sans); font-size: 0.95rem; font-weight: 400;
   color: var(--mid); line-height: 1.85;
+}
+.principle-diagram {
+  display: flex; align-items: center; justify-content: center;
+}
+.principle-diagram svg { width: 100%; height: auto; max-width: 240px; }
+.pd-mono {
+  font-family: var(--mono); font-size: 9px; font-weight: 500;
+  letter-spacing: 0.04em;
+}
+.pd-label {
+  font-family: var(--mono); font-size: 8px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase; fill: var(--dim);
 }
 
 /* ---- TRY IT ---- */
@@ -872,9 +886,10 @@ footer {
 
   /* --- First principles: 2x2 grid, bigger headings --- */
   .principles-grid { grid-template-columns: 1fr 1fr; gap: 1px; }
-  .principle       { padding: 1.25rem 1rem; }
-  .principle h4    { font-size: 1.6rem; margin-bottom: 0.5rem; line-height: 1.25; }
-  .principle p     { font-size: 0.82rem; line-height: 1.55; }
+  .principle       { padding: 1.5rem 1.25rem; grid-template-columns: 1fr; gap: 1.25rem; }
+  .principle-text h4    { font-size: 1.6rem; margin-bottom: 0.5rem; line-height: 1.25; }
+  .principle-text p     { font-size: 0.82rem; line-height: 1.55; }
+  .principle-diagram svg { max-width: 200px; }
 
   /* --- Pipeline: vertical stack with rotated arrows --- */
   .pipeline-wrap {
