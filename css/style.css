@@ -486,8 +486,8 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.25); }
 }
 .principle:hover { background: var(--card); }
 .principle h4 {
-  font-family: var(--serif); font-size: 1.6rem; font-weight: 500;
-  color: var(--bright); margin-bottom: 0.85rem; line-height: 1.3;
+  font-family: var(--serif); font-size: 2rem; font-weight: 500;
+  color: var(--bright); margin-bottom: 0.85rem; line-height: 1.25;
 }
 .principle p {
   font-family: var(--sans); font-size: 0.95rem; font-weight: 400;
@@ -873,7 +873,7 @@ footer {
   /* --- First principles: 2x2 grid, bigger headings --- */
   .principles-grid { grid-template-columns: 1fr 1fr; gap: 1px; }
   .principle       { padding: 1.25rem 1rem; }
-  .principle h4    { font-size: 1.35rem; margin-bottom: 0.5rem; line-height: 1.3; }
+  .principle h4    { font-size: 1.6rem; margin-bottom: 0.5rem; line-height: 1.25; }
   .principle p     { font-size: 0.82rem; line-height: 1.55; }
 
   /* --- Pipeline: vertical stack with rotated arrows --- */
