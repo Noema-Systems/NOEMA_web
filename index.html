@@ -88,7 +88,7 @@
   </div>
 
   <div class="hero-stat">
-    <div class="ratio-big"><span>2.3-8.6</span><span class="ratio-x">x</span></div>
+    <div class="ratio-big"><span>2.3 - 8.6</span><span class="ratio-x">x</span></div>
     <div class="ratio-label">TESTED RANGE</div>
     <div class="ratio-sub">ADAPTIVE &middot; HIGH-FIDELITY &middot; LIVE</div>
   </div>
@@ -151,7 +151,7 @@
         <div class="pipe-arrow">&rarr;</div>
         <div class="pipe-node hl">
           <div class="node-label">NOEMA</div>
-          <div class="node-val">2.3-8.6x</div>
+          <div class="node-val">2.3 - 8.6x</div>
           <div class="node-note">compression</div>
         </div>
         <div class="pipe-arrow">&rarr;</div>
@@ -213,17 +213,17 @@
     </div>
   </div>
 
-  <!-- FIRST PRINCIPLES -->
+  <!-- TECHNICAL ADVANTAGES -->
   <div id="principles">
     <div class="section-pad">
-      <span class="kicker">First principles</span>
-      <h2 class="section-h2">Every signal you discard is information you cannot recover.</h2>
+      <span class="kicker">Technical advantages</span>
+      <h2 class="section-h2">What the architecture makes possible.</h2>
     </div>
     <div class="principles-grid">
-      <div class="principle reveal"><h4>You cannot retrain on data you did not keep.</h4><p>Once raw signal captures are deleted, they are gone. The models you run tomorrow depend on what you store today.</p></div>
-      <div class="principle reveal"><h4>You cannot reproduce experiments without the original signal.</h4><p>Preserving access to reconstructed I/Q data supports replay, analysis, and future algorithm development.</p></div>
-      <div class="principle reveal"><h4>Compression performance is dataset-dependent.</h4><p>NOEMA is designed to reduce storage and transfer burden while measuring reconstruction fidelity against the source data.</p></div>
-      <div class="principle reveal"><h4>Built for teams that cannot afford to lose the past.</h4><p>The insight you do not yet know you will need is already in your data. NOEMA helps make larger archives more practical to keep and revisit.</p></div>
+      <div class="principle reveal"><h4>Region-based access</h4><p>Indexed sidecar metadata supports decoding a specific scene or region without reconstructing the full file first. Reconstructed signal data can feed existing replay, analysis, and processing workflows directly.</p></div>
+      <div class="principle reveal"><h4>Shared codebook</h4><p>A single codebook can serve a batch of files instead of one per file, reducing overhead and supporting consistent reconstruction across an archive.</p></div>
+      <div class="principle reveal"><h4>Auditability</h4><p>Sidecar metadata records what was compressed, how it was reconstructed, what fidelity was measured, and what region index data is available. SNR, RMSE, and correlation are computed and reported for every file.</p></div>
+      <div class="principle reveal"><h4>Less data movement</h4><p>Researchers can avoid pulling an entire raw capture just to inspect one region or run one test.</p></div>
     </div>
   </div>
 
