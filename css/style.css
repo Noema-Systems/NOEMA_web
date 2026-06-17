@@ -268,7 +268,7 @@ nav {
 }
 .hero-bar-track {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
 }
 .bar-cell {
   padding: 14px 1.25rem;
@@ -473,39 +473,108 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.25); }
   color: var(--mid); line-height: 1.8;
 }
 
-/* ---- FIRST PRINCIPLES ---- */
-.principles-grid {
-  display: grid; grid-template-columns: repeat(2, 1fr);
-  gap: 1px; background: var(--border);
-  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
-  margin: 1.25rem 0;
+/* Technical advantages: match reference image */
+.tech-advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
 }
-.principle {
-  background: var(--surface); padding: 2.75rem;
-  transition: background 0.35s;
-  display: grid; grid-template-columns: 1.1fr 1fr;
-  gap: 2rem; align-items: center;
+.tech-advantages-grid .principle {
+  min-height: 0;
+  padding: 40px 36px;
+  border-radius: 6px;
+  border: 1px solid rgba(91, 105, 145, 0.65);
+  background:
+    radial-gradient(circle at 50% 35%, rgba(40, 70, 120, 0.12), transparent 58%),
+    linear-gradient(145deg, rgba(9, 14, 28, 0.98), rgba(2, 4, 10, 0.98));
+  box-shadow: inset 0 0 70px rgba(55, 95, 160, 0.05);
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 32px;
+  align-items: start;
 }
-.principle:hover { background: var(--card); }
-.principle-text h4 {
-  font-family: var(--serif); font-size: 2rem; font-weight: 500;
-  color: var(--bright); margin-bottom: 0.85rem; line-height: 1.25;
+.tech-advantages-grid .principle:hover {
+  background:
+    radial-gradient(circle at 50% 35%, rgba(40, 95, 170, 0.16), transparent 58%),
+    linear-gradient(145deg, rgba(10, 16, 32, 0.98), rgba(2, 4, 10, 0.98));
+  border-color: rgba(106, 169, 255, 0.55);
 }
-.principle-text p {
-  font-family: var(--sans); font-size: 0.95rem; font-weight: 400;
-  color: var(--mid); line-height: 1.85;
+.tech-advantages-grid .principle-eyebrow {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #2096ff;
+  margin-bottom: 16px;
+  white-space: nowrap;
 }
-.principle-diagram {
-  display: flex; align-items: center; justify-content: center;
+.tech-advantages-grid .principle-text h4 {
+  font-family: var(--serif);
+  font-size: 1.85rem;
+  font-weight: 400;
+  line-height: 1.15;
+  color: #ffffff;
+  margin-bottom: 16px;
 }
-.principle-diagram svg { width: 180px; height: auto; max-width: 100%; }
-.pd-mono {
-  font-family: var(--mono); font-size: 9px; font-weight: 500;
-  letter-spacing: 0.04em;
+.tech-advantages-grid .principle-text p {
+  max-width: 320px;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #d5d8e8;
 }
-.pd-label {
-  font-family: var(--mono); font-size: 8px; font-weight: 600;
-  letter-spacing: 0.1em; text-transform: uppercase; fill: var(--dim);
+.tech-advantages-grid .principle-diagram {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 4px;
+  width: 100%;
+}
+.tech-advantages-grid .principle-diagram svg {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  overflow: visible;
+  flex-shrink: 0;
+}
+.tech-advantages-grid .pd-mono {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+.tech-advantages-grid .pd-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  fill: #b9bed8;
+}
+@media (max-width: 1024px) {
+  .tech-advantages-grid {
+    grid-template-columns: 1fr;
+  }
+  .tech-advantages-grid .principle {
+    min-height: auto;
+  }
+}
+@media (max-width: 700px) {
+  .tech-advantages-grid .principle {
+    padding: 34px 24px;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .tech-advantages-grid .principle-text h4 {
+    font-size: 2.2rem;
+  }
+  .tech-advantages-grid .principle-text p {
+    font-size: 0.98rem;
+  }
+  .tech-advantages-grid .principle-diagram svg {
+    max-width: 320px;
+  }
 }
 
 /* ---- TRY IT ---- */
@@ -883,13 +952,6 @@ footer {
   .card-img-box { height: 200px; }
   .card-body    { padding: 1.75rem 1.25rem 2rem; }
   .card-title   { font-size: 1.25rem; }
-
-  /* --- First principles: 2x2 grid, bigger headings --- */
-  .principles-grid { grid-template-columns: 1fr 1fr; gap: 1px; }
-  .principle       { padding: 1.5rem 1.25rem; grid-template-columns: 1fr; gap: 1.25rem; }
-  .principle-text h4    { font-size: 1.6rem; margin-bottom: 0.5rem; line-height: 1.25; }
-  .principle-text p     { font-size: 0.82rem; line-height: 1.55; }
-  .principle-diagram svg { max-width: 160px; }
 
   /* --- Pipeline: vertical stack with rotated arrows --- */
   .pipeline-wrap {
