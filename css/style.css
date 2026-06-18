@@ -502,12 +502,11 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.25); }
 }
 .tech-advantages-grid .principle-eyebrow {
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.07em;
   color: #2096ff;
   margin-bottom: 16px;
-  white-space: nowrap;
 }
 .tech-advantages-grid .principle-text h4 {
   font-family: var(--serif);
