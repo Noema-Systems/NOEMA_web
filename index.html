@@ -79,8 +79,8 @@
 
   <div class="hero-content">
     <div class="hero-badge"><span class="bdot"></span>Signal Compression</div>
-    <h1>Signal-domain compression<br>for raw radar and<br><em>RF signal data.</em></h1>
-    <p class="hero-sub">NOEMA compresses raw radar, RF, and SAR signal datasets into smaller, indexed working archives that can still be navigated, verified, reconstructed, and used by downstream workflows.</p>
+    <h1>Signal-domain compression<br>for raw radar, RF,<br><em>and SAR data.</em></h1>
+    <p class="hero-sub">NOEMA compresses raw I/Q, radar, RF, and SAR datasets into smaller indexed working archives that remain reconstructable, fidelity-audited, and usable by downstream workflows.</p>
     <div class="hero-actions">
       <button class="btn-white" onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})">Request access</button>
       <button class="btn-outline" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">How it works &rarr;</button>
@@ -90,7 +90,7 @@
   <div class="hero-stat">
     <div class="ratio-big"><span>2.3-8.6</span><span class="ratio-x">x</span></div>
     <div class="ratio-label">TESTED RANGE</div>
-    <div class="ratio-sub">ADAPTIVE &middot; HIGH-FIDELITY &middot; LIVE</div>
+    <div class="ratio-sub">ADAPTIVE &middot; HIGH-FIDELITY &middot; INDEXED</div>
   </div>
 
   <div class="hero-bar">
@@ -98,7 +98,7 @@
       <div class="bar-cell on"><span class="dot-sm live"></span>Codec active</div>
       <div class="bar-cell"><span class="dot-sm"></span>Raw signal data compressed</div>
       <div class="bar-cell"><span class="dot-sm"></span>Indexed working archive</div>
-      <div class="bar-cell"><span class="dot-sm"></span>Verified reconstruction</div>
+      <div class="bar-cell"><span class="dot-sm"></span>Fidelity-audited reconstruction</div>
       <div class="bar-cell"><span class="dot-sm"></span>On-premises &middot; Air-gapped &middot; Cloud</div>
     </div>
   </div>
@@ -110,32 +110,32 @@
     <div class="section-pad" style="border-top: none; padding-top: 0;">
       <span class="kicker">How it works</span>
       <h2 class="section-h2">Four operations. Built for high-fidelity reconstruction.</h2>
-      <p class="section-preamble">NOEMA sits between your signal source and your storage or transmission layer. Nothing upstream changes. Compatible with existing downstream workflows</p>
+      <p class="section-preamble">NOEMA reduces raw signal data volume without requiring changes to existing recorders, archives, processors, or replay workflows.</p>
     </div>
     <div class="ops-grid">
       <div class="op-card reveal">
         <div class="op-num">01 Intake</div>
         <div class="op-title">Raw signal data enters NOEMA.</div>
-        <p class="op-desc">No preprocessing. No configuration. Automatically adapts to the statistical profile of incoming I/Q streams from the first run.</p>
-        <div class="op-specs"><span>Any signal type</span><span>Zero configuration</span><span>Works from first run</span></div>
+        <p class="op-desc">Built for high-volume I/Q, radar, RF, and SAR datasets. Runs from defaults, with tuning available when fidelity, throughput, or archive constraints matter.</p>
+        <div class="op-specs"><span>Raw I/Q data</span><span>Level-0 signal data</span><span>Runs from defaults</span></div>
       </div>
       <div class="op-card reveal">
         <div class="op-num">02 Compress</div>
-        <div class="op-title">Adaptive signal-domain compression.</div>
-        <p class="op-desc">Compression performance is dataset-dependent. Self-tunes to your signal profile in real time or batch. Designed for high-volume I/Q datasets.</p>
-        <div class="op-specs"><span>2.3-8.6x tested range</span><span>Self-adapting codec</span><span>Real-time or batch</span></div>
+        <div class="op-title">Create a smaller working archive.</div>
+        <p class="op-desc">NOEMA compresses signal data according to the statistical profile of each dataset. Compression performance depends on format, entropy, quantization, and fidelity target.</p>
+        <div class="op-specs"><span>2.3-8.6x tested range</span><span>Dataset-dependent results</span><span>Batch or real-time</span></div>
       </div>
       <div class="op-card reveal">
-        <div class="op-num">03 Transmit / Store</div>
-        <div class="op-title">More through the same infrastructure.</div>
-        <p class="op-desc">Same bandwidth carries more. Same storage holds more. On-premises, air-gapped, or cloud. No hardware changes at any stage.</p>
-        <div class="op-specs"><span>Satellite to ground</span><span>Ground to cloud or archive</span><span>No hardware changes</span></div>
+        <div class="op-num">03 Index and store</div>
+        <div class="op-title">Keep the compressed archive usable.</div>
+        <p class="op-desc">Sidecar metadata records file structure, decode locations, reconstruction settings, and verification context so selected files or regions can be accessed later.</p>
+        <div class="op-specs"><span>Indexed working archive</span><span>Region-based access</span><span>On-premises · Air-gapped · Cloud</span></div>
       </div>
       <div class="op-card reveal">
-        <div class="op-num">04 Reconstruct</div>
-        <div class="op-title">Reconstruct a high-fidelity signal output.</div>
-        <p class="op-desc">Any time. Any file. Reconstruction fidelity verified on output. Replay experiments. Retrain models. Compatible with existing downstream workflows.</p>
-        <div class="op-specs"><span>SNR verified</span><span>Source comparison</span><span>Any file, any time</span></div>
+        <div class="op-num">04 Reconstruct and verify</div>
+        <div class="op-title">Use the data downstream.</div>
+        <p class="op-desc">Reconstruct full files or selected signal regions for replay, analysis, validation, model-development workflows, or existing ground-processing pipelines. Reconstruction quality is measured with signal-level metrics.</p>
+        <div class="op-specs"><span>SNR verified</span><span>RMSE measured</span><span>Correlation checked</span></div>
       </div>
     </div>
 
@@ -145,15 +145,13 @@
         <div class="pipe-node">
           <div class="node-label">Your dataset</div>
           <div class="node-val" id="pipe-source">50 TB</div>
-          <div class="node-note">raw archive</div>
+          <div class="node-note">raw signal data</div>
         </div>
-        <div class="pipe-arrow">&rarr;</div>
-        <div class="pipe-node"><div class="node-label">Intake</div><div class="node-val" id="pipe-intake">50 TB</div><div class="node-note">unchanged</div></div>
         <div class="pipe-arrow">&rarr;</div>
         <div class="pipe-node hl">
           <div class="node-label">NOEMA</div>
           <div class="node-val">2.3 - 8.6x</div>
-          <div class="node-note">compression</div>
+          <div class="node-note">tested compression range</div>
         </div>
         <div class="pipe-arrow">&rarr;</div>
         <div class="pipe-node">
@@ -162,14 +160,20 @@
           <div class="node-note" id="pipe-saved">57-88% smaller</div>
         </div>
         <div class="pipe-arrow">&rarr;</div>
-        <div class="pipe-node"><div class="node-label">Reconstruct</div><div class="node-val" id="pipe-reconstruct">50 TB</div><div class="node-note">fidelity verified</div></div>
+        <div class="pipe-node">
+          <div class="node-label">Selective access</div>
+          <div class="node-val">File / Region</div>
+          <div class="node-note">window level access</div>
+        </div>
+        <div class="pipe-arrow">&rarr;</div>
+        <div class="pipe-node"><div class="node-label">Reconstruct</div><div class="node-val" id="pipe-reconstruct">50 TB</div><div class="node-note">fidelity-audited output</div></div>
       </div>
       <div class="ratio-slider">
         <label>Your dataset size</label>
         <input type="range" id="dataset-slider" min="0" max="100" step="1" value="68">
         <span class="ratio-value" id="dataset-display">50 TB</span>
       </div>
-      <div class="validation-note">Compression ratios are dataset-dependent &middot; Tested on Level-0 SAR data &middot; High-fidelity reconstruction</div>
+      <div class="validation-note">Compression ratios are dataset-dependent &middot; Tested on Level-0 SAR data &middot; Results vary by format, entropy, quantization, and fidelity target</div>
     </div>
   </div>
 
@@ -177,38 +181,38 @@
   <div id="for">
     <div class="section-pad">
       <span class="kicker">Who it's for</span>
-      <h2 class="section-h2">Designed for the most demanding signal pipelines.</h2>
-      <p class="section-preamble">Raw signal data is generated faster than it can be stored or transmitted. NOEMA helps reduce the cost of keeping high-value I/Q data available for replay, analysis, and future processing.</p>
+      <h2 class="section-h2">Designed for demanding signal pipelines.</h2>
+      <p class="section-preamble">Raw signal data is expensive to store, slow to transfer, and difficult to keep available for future replay, analysis, and processing. NOEMA reduces data volume while keeping reconstruction and downstream use in view.</p>
     </div>
     <div class="cards-grid">
       <div class="who-card reveal">
         <div class="card-img-box" style="--d:0s">
-          <img src="images/av1.webp" alt="Autonomous vehicle testing" loading="lazy">
+          <img src="images/sat11.webp" alt="Satellite in orbit" loading="lazy">
         </div>
         <div class="card-body">
-          <div class="card-cat">Autonomous Vehicles</div>
-          <div class="card-title">AV test fleets generate terabytes of raw radar data daily.</div>
-          <p class="card-text">Storing everything is expensive; discarding captures can mean losing edge cases. NOEMA compresses raw sensor streams while preserving high-fidelity reconstruction for later replay and analysis.</p>
+          <div class="card-cat">Satellite and SAR archives</div>
+          <div class="card-title">Every reduction in Level-0 data volume matters.</div>
+          <p class="card-text">SAR and radar signal data can be compressed at the source, on the ground, or between archive layers. Built for workflows where preservation, reconstruction fidelity, and downstream processing compatibility matter.</p>
         </div>
       </div>
       <div class="who-card reveal">
         <div class="card-img-box" style="--d:1.8s">
-          <img src="images/sat1.webp" alt="Satellite in orbit" loading="lazy">
+          <img src="images/EW.webp" alt="Defense and SIGINT operations" loading="lazy">
         </div>
         <div class="card-body">
-          <div class="card-cat">Satellite and SAR</div>
-          <div class="card-title">Downlink windows are measured in minutes. Every reduction in data volume matters.</div>
-          <p class="card-text">NOEMA compresses Level-0 SAR and signal data at the source, on the ground, or between relay and archive layers. More data can move through the same infrastructure.</p>
+          <div class="card-cat">Defense and SIGINT</div>
+          <div class="card-title">Operational signal data often needs to remain local, auditable, and replayable.</div>
+          <p class="card-text">Deployable on-premises, in air-gapped environments, or close to the point of collection. Supports workflows where bandwidth is constrained, storage is limited, and reconstruction fidelity matters.</p>
         </div>
       </div>
       <div class="who-card reveal">
         <div class="card-img-box" style="--d:3.6s">
-          <img src="images/sigint1.webp" alt="Tactical operations" loading="lazy">
+          <img src="images/spectrum.webp" alt="RF spectrum monitoring" loading="lazy">
         </div>
         <div class="card-body">
-          <div class="card-cat">Defense and SIGINT</div>
-          <div class="card-title">At the edge, storage is constrained and connectivity is intermittent.</div>
-          <p class="card-text">NOEMA compresses at the point of collection. Air-gappable, ARM-compatible, and built for replay workflows where reconstruction fidelity matters.</p>
+          <div class="card-cat">Spectrum monitoring and RF intelligence</div>
+          <div class="card-title">Continuous RF capture creates datasets that are difficult to revisit.</div>
+          <p class="card-text">Raw RF recordings can be compressed, indexed, and reconstructed so analysts can retrieve selected windows, replay events, and preserve signal evidence.</p>
         </div>
       </div>
     </div>
@@ -218,14 +222,14 @@
   <div id="principles">
     <div class="section-pad">
       <span class="kicker">Technical advantages</span>
-      <h2 class="section-h2">Compress data. Keep it navigable.</h2>
+      <h2 class="section-h2">Selective reconstruction. Shared representation. Verified compression.</h2>
     </div>
     <div class="tech-advantages-grid">
       <div class="principle reveal">
         <div class="principle-text">
           <div class="principle-eyebrow">01 SELECTIVE DECODE</div>
           <h4>Region-based access</h4>
-          <p>NOEMA compresses raw signal data into a smaller indexed working archive. Sidecar metadata lets teams decode a specific scene or region without reconstructing the full archive first.</p>
+          <p>NOEMA sidecar metadata enables decoding of specific regions, time windows, or segments without full archive reconstruction, reducing unnecessary data movement during access.</p>
         </div>
         <div class="principle-diagram">
           <svg viewBox="0 0 340 250" xmlns="http://www.w3.org/2000/svg">
@@ -335,9 +339,9 @@
       </div>
       <div class="principle reveal">
         <div class="principle-text">
-          <div class="principle-eyebrow">04 TARGETED TRANSFER</div>
-          <h4>Smaller working archive</h4>
-          <p>Researchers can inspect one region or run one test without pulling an entire raw capture through the workflow.</p>
+          <div class="principle-eyebrow">04 WORKFLOW COMPATIBILITY</div>
+          <h4>Runs beside existing systems</h4>
+          <p>Designed to work with existing recorders, archives, processors, replay tools, and analysis workflows during evaluation.</p>
         </div>
         <div class="principle-diagram">
           <svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
@@ -373,24 +377,24 @@
         <div>
           <div class="shadow-badge">
             <span class="shadow-badge-dot"></span>
-            <span class="shadow-badge-text">SHADOW MODE -- RUNS PARALLEL TO YOUR EXISTING PIPELINE. ZERO DISRUPTION.</span>
+            <span class="shadow-badge-text">SHADOW MODE -- RUN BESIDE YOUR EXISTING PIPELINE. ZERO DISRUPTION.</span>
           </div>
           <div class="tryit-heading">Live in your environment<br>the same day.</div>
-          <p class="tryit-sub">No integration required. No data leaves your system. No risk. Runs in parallel with your existing pipeline from day one.</p>
+          <p class="tryit-sub">No integration required for evaluation. Run NOEMA beside your current workflow and measure compression ratio, storage reduction, reconstruction fidelity, and operational fit on your own signal data.</p>
           <div class="tryit-badge-section">
             <div class="tryit-badge-track">
               <div class="tryit-badge-line">ON-PREMISES &middot; AIR-GAPPED &middot; CLOUD</div>
               <div class="tryit-badge-single">NO DATA LEAVES YOUR ENVIRONMENT</div>
-              <div class="tryit-badge-single">WORKS FROM DAY ONE</div>
+              <div class="tryit-badge-single">EXISTING WORKFLOWS CONTINUE</div>
             </div>
           </div>
         </div>
       </div>
       <div class="tryit-steps">
-        <div class="tryit-step"><div class="ts-num">01 Receive</div><div class="ts-title">Delivered instantly</div><p class="ts-body">Binary, setup wizard, test data, and documentation. Linux, Windows, and ARM.</p></div>
-        <div class="tryit-step"><div class="ts-num">02 Deploy</div><div class="ts-title">Answer four questions</div><p class="ts-body">Input, output, CPU limit, throughput cap. Configuration is generated automatically. No coding.</p></div>
-        <div class="tryit-step"><div class="ts-num">03 Observe</div><div class="ts-title">Results appear automatically</div><p class="ts-body">Compression ratio, storage savings, and reconstruction verification on your own I/Q data.</p></div>
-        <div class="tryit-step"><div class="ts-num">04 Review</div><div class="ts-title">Clear impact</div><p class="ts-body">Storage savings, bandwidth gains, ROI. You leave with a decision, not a report.</p></div>
+        <div class="tryit-step"><div class="ts-num">01 Receive</div><div class="ts-title">Evaluation package delivered</div><p class="ts-body">Binary, setup guide, sample workflow, documentation, and test data. Linux, Windows, and ARM deployment options available.</p></div>
+        <div class="tryit-step"><div class="ts-num">02 Deploy</div><div class="ts-title">Configure the run</div><p class="ts-body">Set input location, output location, compute limits, throughput constraints, and fidelity target. Defaults are provided for first-pass evaluation.</p></div>
+        <div class="tryit-step"><div class="ts-num">03 Observe</div><div class="ts-title">Results appear automatically</div><p class="ts-body">Review compression ratio, output size, reconstruction metrics, sidecar metadata, and archive reports generated from your own data.</p></div>
+        <div class="tryit-step"><div class="ts-num">04 Review</div><div class="ts-title">Make a technical decision</div><p class="ts-body">Compare storage reduction, transfer impact, reconstruction quality, selective decode behavior, and workflow fit before deciding whether to move forward.</p></div>
       </div>
       <div class="deploy-row">
         <span class="deploy-label">Integrate as</span>
@@ -404,7 +408,7 @@
         </div>
       </div>
       <div class="tryit-cta-row">
-        <button class="btn-white" onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})">Contact to test it</button>
+        <button class="btn-white" onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})">Request access</button>
         <button class="tryit-arrow" onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
@@ -417,7 +421,7 @@
     <div class="form-section" style="border-top: none; padding: 2.5rem 0 2rem;">
       <div class="form-left reveal">
         <h2>Request access</h2>
-        <p>Human response within 24 hours. No automated sequences. Priority given to AV infrastructure teams, satellite and ground station operators, and defense organizations.</p>
+        <p>Human response within 24 hours. No automated sequences. Priority given to satellite and SAR archive teams, defense and radar organizations, RF monitoring groups, and autonomous vehicle radar teams.</p>
       </div>
       <div class="reveal">
         <form id="accessForm" action="https://formspree.io/f/myklvjqy" method="POST">
