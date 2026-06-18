@@ -25,11 +25,11 @@ const compressedLow  = gb / HIGH_RATIO;  // smaller compressed output
 const savedLowPct  = ((1 - 1 / LOW_RATIO) * 100).toFixed(0);
 const savedHighPct = ((1 - 1 / HIGH_RATIO) * 100).toFixed(0);
 const srcFmt = formatSize(gb);
-const cmpFmt = `${formatSize(compressedHigh)}-${formatSize(compressedLow)}`;
+const cmpFmt = `${formatSize(compressedHigh)} - ${formatSize(compressedLow)}`;
     document.getElementById('pipe-source').textContent = srcFmt;
     document.getElementById('pipe-intake').textContent = srcFmt;
     document.getElementById('pipe-compressed').textContent = cmpFmt;
-    document.getElementById('pipe-saved').textContent = `${savedLowPct}-${savedHighPct}% saved`;
+    document.getElementById('pipe-saved').textContent = `${savedLowPct}-${savedHighPct}% smaller`;
     document.getElementById('pipe-reconstruct').textContent = srcFmt;
     document.getElementById('dataset-display').textContent = srcFmt;
   }

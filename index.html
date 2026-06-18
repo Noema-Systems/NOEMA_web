@@ -80,7 +80,7 @@
   <div class="hero-content">
     <div class="hero-badge"><span class="bdot"></span>Signal Compression</div>
     <h1>Signal-domain compression<br>for raw radar and<br><em>RF signal data.</em></h1>
-    <p class="hero-sub">Reduce storage and transfer costs for high-volume I/Q datasets. Demonstrated reductions of 57%-88% on tested Level-0 SAR datasets.</p>
+    <p class="hero-sub">NOEMA compresses raw radar, RF, and SAR signal datasets into smaller, indexed working archives that can still be navigated, verified, reconstructed, and used by downstream workflows.</p>
     <div class="hero-actions">
       <button class="btn-white" onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})">Request access</button>
       <button class="btn-outline" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">How it works &rarr;</button>
@@ -88,7 +88,7 @@
   </div>
 
   <div class="hero-stat">
-    <div class="ratio-big"><span>2.3 - 8.6</span><span class="ratio-x">x</span></div>
+    <div class="ratio-big"><span>2.3-8.6</span><span class="ratio-x">x</span></div>
     <div class="ratio-label">TESTED RANGE</div>
     <div class="ratio-sub">ADAPTIVE &middot; HIGH-FIDELITY &middot; LIVE</div>
   </div>
@@ -96,8 +96,9 @@
   <div class="hero-bar">
     <div class="hero-bar-track">
       <div class="bar-cell on"><span class="dot-sm live"></span>Codec active</div>
-      <div class="bar-cell"><span class="dot-sm"></span>Level-0 IQ compressed</div>
-      <div class="bar-cell"><span class="dot-sm"></span>Fidelity verified</div>
+      <div class="bar-cell"><span class="dot-sm"></span>Raw signal data compressed</div>
+      <div class="bar-cell"><span class="dot-sm"></span>Indexed working archive</div>
+      <div class="bar-cell"><span class="dot-sm"></span>Verified reconstruction</div>
       <div class="bar-cell"><span class="dot-sm"></span>On-premises &middot; Air-gapped &middot; Cloud</div>
     </div>
   </div>
@@ -156,9 +157,9 @@
         </div>
         <div class="pipe-arrow">&rarr;</div>
         <div class="pipe-node">
-          <div class="node-label">Transmit / Store</div>
+          <div class="node-label">Working archive</div>
           <div class="node-val" id="pipe-compressed">2.3-0.6 TB</div>
-          <div class="node-note" id="pipe-saved">57-88% saved</div>
+          <div class="node-note" id="pipe-saved">57-88% smaller</div>
         </div>
         <div class="pipe-arrow">&rarr;</div>
         <div class="pipe-node"><div class="node-label">Reconstruct</div><div class="node-val" id="pipe-reconstruct">50 TB</div><div class="node-note">fidelity verified</div></div>
@@ -217,129 +218,148 @@
   <div id="principles">
     <div class="section-pad">
       <span class="kicker">Technical advantages</span>
-      <h2 class="section-h2">What the architecture makes possible.</h2>
+      <h2 class="section-h2">Compress data. Keep it navigable.</h2>
     </div>
-    <div class="principles-grid">
+    <div class="tech-advantages-grid">
       <div class="principle reveal">
-        <div class="principle-text"><h4>Region-based access</h4><p>Indexed sidecar metadata supports decoding a specific scene or region without reconstructing the full file first. Reconstructed signal data can feed existing replay, analysis, and processing workflows directly.</p></div>
+        <div class="principle-text">
+          <div class="principle-eyebrow">01 SELECTIVE DECODE</div>
+          <h4>Region-based access</h4>
+          <p>NOEMA compresses raw signal data into a smaller indexed working archive. Sidecar metadata lets teams decode a specific scene or region without reconstructing the full archive first.</p>
+        </div>
         <div class="principle-diagram">
-          <svg width="180" height="130" viewBox="0 0 180 130" xmlns="http://www.w3.org/2000/svg">
-            <text x="0" y="10" class="pd-label">Raw archive</text>
-            <rect x="0" y="16" width="180" height="20" rx="3" fill="none" stroke="#3a3a60" stroke-width="0.5"/>
-            <rect x="3" y="19" width="27" height="14" rx="2" fill="#121228" stroke="#3a3a60" stroke-width="0.5"/>
-            <rect x="33" y="19" width="27" height="14" rx="2" fill="#121228" stroke="#3a3a60" stroke-width="0.5"/>
-            <rect x="63" y="19" width="27" height="14" rx="2" fill="#121228" stroke="#3a3a60" stroke-width="0.5"/>
-            <rect x="93" y="19" width="27" height="14" rx="2" fill="#121228" stroke="#3a3a60" stroke-width="0.5"/>
-            <rect x="123" y="19" width="27" height="14" rx="2" fill="#121228" stroke="#3a3a60" stroke-width="0.5"/>
-            <rect x="153" y="19" width="24" height="14" rx="2" fill="#121228" stroke="#3a3a60" stroke-width="0.5"/>
-            <line x1="90" y1="36" x2="90" y2="50" stroke="#3a3a60" stroke-width="0.5"/>
-            <polygon points="87,50 93,50 90,55" fill="#3a3a60"/>
-            <text x="0" y="68" class="pd-label">Index</text>
-            <rect x="0" y="74" width="180" height="20" rx="3" fill="none" stroke="#3a3a60" stroke-width="0.5"/>
-            <rect x="3" y="77" width="27" height="14" rx="2" fill="#121228" stroke="#3a3a60" stroke-width="0.5"/>
-            <text x="16" y="87" text-anchor="middle" fill="#7070a0" class="pd-mono">R1</text>
-            <rect x="33" y="77" width="27" height="14" rx="2" fill="#121228" stroke="#3a3a60" stroke-width="0.5"/>
-            <text x="46" y="87" text-anchor="middle" fill="#7070a0" class="pd-mono">R2</text>
-            <rect x="63" y="77" width="27" height="14" rx="2" fill="rgba(106,169,255,0.18)" stroke="#6aa9ff" stroke-width="1"/>
-            <text x="76" y="87" text-anchor="middle" fill="#6aa9ff" class="pd-mono">R7</text>
-            <rect x="93" y="77" width="27" height="14" rx="2" fill="#121228" stroke="#3a3a60" stroke-width="0.5"/>
-            <text x="106" y="87" text-anchor="middle" fill="#7070a0" class="pd-mono">R8</text>
-            <rect x="123" y="77" width="27" height="14" rx="2" fill="#121228" stroke="#3a3a60" stroke-width="0.5"/>
-            <text x="136" y="87" text-anchor="middle" fill="#7070a0" class="pd-mono">R9</text>
-            <rect x="153" y="77" width="24" height="14" rx="2" fill="#121228" stroke="#3a3a60" stroke-width="0.5"/>
-            <line x1="76" y1="94" x2="76" y2="106" stroke="#6aa9ff" stroke-width="0.5"/>
-            <polygon points="73,106 79,106 76,111" fill="#6aa9ff"/>
-            <rect x="36" y="112" width="80" height="16" rx="3" fill="rgba(106,169,255,0.1)" stroke="#6aa9ff" stroke-width="0.5"/>
-            <text x="76" y="123" text-anchor="middle" fill="#6aa9ff" class="pd-mono">DECODE R7 ONLY</text>
+          <svg viewBox="0 0 340 250" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="16" class="pd-label">Compressed raw archive</text>
+            <rect x="0" y="26" width="46" height="32" rx="4" fill="#121228" stroke="#3a3a60" stroke-width="0.75"/>
+            <rect x="54" y="26" width="46" height="32" rx="4" fill="#121228" stroke="#3a3a60" stroke-width="0.75"/>
+            <rect x="108" y="26" width="46" height="32" rx="4" fill="#121228" stroke="#3a3a60" stroke-width="0.75"/>
+            <rect x="162" y="26" width="46" height="32" rx="4" fill="#121228" stroke="#3a3a60" stroke-width="0.75"/>
+            <rect x="216" y="26" width="46" height="32" rx="4" fill="#121228" stroke="#3a3a60" stroke-width="0.75"/>
+            <text x="282" y="48" fill="#7070a0" class="pd-mono">...</text>
+            <line x1="23" y1="58" x2="23" y2="74" stroke="#7070a0" stroke-width="0.5" stroke-dasharray="2 2"/>
+            <line x1="77" y1="58" x2="77" y2="74" stroke="#7070a0" stroke-width="0.5" stroke-dasharray="2 2"/>
+            <line x1="131" y1="58" x2="131" y2="74" stroke="#7070a0" stroke-width="0.5" stroke-dasharray="2 2"/>
+            <line x1="185" y1="58" x2="185" y2="84" stroke="#7070a0" stroke-width="0.5" stroke-dasharray="2 2"/>
+            <line x1="239" y1="58" x2="239" y2="74" stroke="#7070a0" stroke-width="0.5" stroke-dasharray="2 2"/>
+            <line x1="23" y1="74" x2="239" y2="74" stroke="#7070a0" stroke-width="0.5" stroke-dasharray="2 2"/>
+            <text x="0" y="104" class="pd-label">Noema index</text>
+            <rect x="0" y="114" width="46" height="32" rx="4" fill="#121228" stroke="#3a3a60" stroke-width="0.75"/>
+            <text x="23" y="135" text-anchor="middle" fill="#7070a0" class="pd-mono">R1</text>
+            <rect x="54" y="114" width="46" height="32" rx="4" fill="#121228" stroke="#3a3a60" stroke-width="0.75"/>
+            <text x="77" y="135" text-anchor="middle" fill="#7070a0" class="pd-mono">R2</text>
+            <rect x="108" y="114" width="46" height="32" rx="4" fill="#121228" stroke="#3a3a60" stroke-width="0.75"/>
+            <text x="131" y="135" text-anchor="middle" fill="#7070a0" class="pd-mono">R3</text>
+            <rect x="161" y="111" width="48" height="38" rx="4" fill="rgba(106,169,255,0.15)" stroke="#6aa9ff" stroke-width="1.5"/>
+            <text x="185" y="135" text-anchor="middle" fill="#6aa9ff" class="pd-mono" style="font-weight:600">R7</text>
+            <rect x="216" y="114" width="46" height="32" rx="4" fill="#121228" stroke="#3a3a60" stroke-width="0.75"/>
+            <text x="239" y="135" text-anchor="middle" fill="#7070a0" class="pd-mono">R8</text>
+            <rect x="270" y="114" width="46" height="32" rx="4" fill="#121228" stroke="#3a3a60" stroke-width="0.75"/>
+            <text x="293" y="135" text-anchor="middle" fill="#7070a0" class="pd-mono">R9</text>
+            <line x1="185" y1="149" x2="185" y2="175" stroke="#6aa9ff" stroke-width="1.25"/>
+            <rect x="98" y="175" width="174" height="38" rx="6" fill="rgba(106,169,255,0.1)" stroke="#6aa9ff" stroke-width="1.25"/>
+            <text x="185" y="198" text-anchor="middle" fill="#6aa9ff" class="pd-mono" style="font-weight:600">DECODE R7 ONLY</text>
           </svg>
         </div>
       </div>
       <div class="principle reveal">
-        <div class="principle-text"><h4>Shared codebook</h4><p>A single codebook can serve a batch of files instead of one per file, reducing overhead and supporting consistent reconstruction across an archive.</p></div>
+        <div class="principle-text">
+          <div class="principle-eyebrow">02 SHARED METADATA</div>
+          <h4>Shared codebook</h4>
+          <p>One codebook can serve a batch of files, reducing overhead and keeping reconstruction behavior consistent across the archive.</p>
+        </div>
         <div class="principle-diagram">
-          <svg width="180" height="130" viewBox="0 0 180 130" xmlns="http://www.w3.org/2000/svg">
-            <text x="0" y="10" class="pd-label">Without sharing</text>
-            <rect x="0" y="16" width="42" height="16" rx="3" fill="#121228" stroke="#3a3a60" stroke-width="0.5"/>
-            <text x="21" y="27" text-anchor="middle" fill="#a0a0c0" class="pd-mono">FILE A</text>
-            <rect x="69" y="16" width="42" height="16" rx="3" fill="#121228" stroke="#3a3a60" stroke-width="0.5"/>
-            <text x="90" y="27" text-anchor="middle" fill="#a0a0c0" class="pd-mono">FILE B</text>
-            <rect x="138" y="16" width="42" height="16" rx="3" fill="#121228" stroke="#3a3a60" stroke-width="0.5"/>
-            <text x="159" y="27" text-anchor="middle" fill="#a0a0c0" class="pd-mono">FILE C</text>
-            <rect x="0" y="38" width="42" height="14" rx="3" fill="none" stroke="#7070a0" stroke-width="0.5" stroke-dasharray="2 2"/>
-            <text x="21" y="48" text-anchor="middle" fill="#7070a0" class="pd-mono">CB A</text>
-            <rect x="69" y="38" width="42" height="14" rx="3" fill="none" stroke="#7070a0" stroke-width="0.5" stroke-dasharray="2 2"/>
-            <text x="90" y="48" text-anchor="middle" fill="#7070a0" class="pd-mono">CB B</text>
-            <rect x="138" y="38" width="42" height="14" rx="3" fill="none" stroke="#7070a0" stroke-width="0.5" stroke-dasharray="2 2"/>
-            <text x="159" y="48" text-anchor="middle" fill="#7070a0" class="pd-mono">CB C</text>
-            <line x1="0" y1="62" x2="180" y2="62" stroke="#2a2a42" stroke-width="0.5"/>
-            <text x="0" y="76" class="pd-label">With Noema</text>
-            <rect x="69" y="80" width="42" height="16" rx="3" fill="rgba(106,169,255,0.18)" stroke="#6aa9ff" stroke-width="1"/>
-            <text x="90" y="91" text-anchor="middle" fill="#6aa9ff" class="pd-mono">SHARED</text>
-            <line x1="90" y1="96" x2="90" y2="104" stroke="#6aa9ff" stroke-width="0.5"/>
-            <line x1="21" y1="104" x2="159" y2="104" stroke="#6aa9ff" stroke-width="0.5"/>
-            <line x1="21" y1="104" x2="21" y2="112" stroke="#6aa9ff" stroke-width="0.5"/>
-            <line x1="90" y1="104" x2="90" y2="112" stroke="#6aa9ff" stroke-width="0.5"/>
-            <line x1="159" y1="104" x2="159" y2="112" stroke="#6aa9ff" stroke-width="0.5"/>
-            <rect x="0" y="112" width="42" height="16" rx="3" fill="#121228" stroke="#3a3a60" stroke-width="0.5"/>
-            <text x="21" y="123" text-anchor="middle" fill="#a0a0c0" class="pd-mono">FILE A</text>
-            <rect x="69" y="112" width="42" height="16" rx="3" fill="#121228" stroke="#3a3a60" stroke-width="0.5"/>
-            <text x="90" y="123" text-anchor="middle" fill="#a0a0c0" class="pd-mono">FILE B</text>
-            <rect x="138" y="112" width="42" height="16" rx="3" fill="#121228" stroke="#3a3a60" stroke-width="0.5"/>
-            <text x="159" y="123" text-anchor="middle" fill="#a0a0c0" class="pd-mono">FILE C</text>
+          <svg viewBox="0 0 340 250" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="16" class="pd-label">Without shared codebook</text>
+            <rect x="0" y="26" width="78" height="28" rx="5" fill="#121228" stroke="#3a3a60" stroke-width="0.75"/>
+            <text x="39" y="44" text-anchor="middle" fill="#a0a0c0" class="pd-mono">FILE A</text>
+            <rect x="131" y="26" width="78" height="28" rx="5" fill="#121228" stroke="#3a3a60" stroke-width="0.75"/>
+            <text x="170" y="44" text-anchor="middle" fill="#a0a0c0" class="pd-mono">FILE B</text>
+            <rect x="262" y="26" width="78" height="28" rx="5" fill="#121228" stroke="#3a3a60" stroke-width="0.75"/>
+            <text x="301" y="44" text-anchor="middle" fill="#a0a0c0" class="pd-mono">FILE C</text>
+            <line x1="39" y1="54" x2="39" y2="64" stroke="#3a3a60" stroke-width="0.75"/>
+            <line x1="170" y1="54" x2="170" y2="64" stroke="#3a3a60" stroke-width="0.75"/>
+            <line x1="301" y1="54" x2="301" y2="64" stroke="#3a3a60" stroke-width="0.75"/>
+            <rect x="0" y="64" width="78" height="26" rx="5" fill="none" stroke="#7070a0" stroke-width="0.75" stroke-dasharray="3 2"/>
+            <text x="39" y="81" text-anchor="middle" fill="#7070a0" class="pd-mono">CB A</text>
+            <rect x="131" y="64" width="78" height="26" rx="5" fill="none" stroke="#7070a0" stroke-width="0.75" stroke-dasharray="3 2"/>
+            <text x="170" y="81" text-anchor="middle" fill="#7070a0" class="pd-mono">CB B</text>
+            <rect x="262" y="64" width="78" height="26" rx="5" fill="none" stroke="#7070a0" stroke-width="0.75" stroke-dasharray="3 2"/>
+            <text x="301" y="81" text-anchor="middle" fill="#7070a0" class="pd-mono">CB C</text>
+            <line x1="0" y1="112" x2="340" y2="112" stroke="#2a2a42" stroke-width="0.5"/>
+            <text x="0" y="134" class="pd-label">With Noema</text>
+            <rect x="131" y="144" width="78" height="30" rx="5" fill="rgba(106,169,255,0.15)" stroke="#6aa9ff" stroke-width="1.5"/>
+            <text x="170" y="163" text-anchor="middle" fill="#6aa9ff" class="pd-mono" style="font-weight:600">SHARED</text>
+            <line x1="170" y1="174" x2="170" y2="188" stroke="#6aa9ff" stroke-width="1.25"/>
+            <line x1="39" y1="188" x2="301" y2="188" stroke="#6aa9ff" stroke-width="1.25"/>
+            <line x1="39" y1="188" x2="39" y2="200" stroke="#6aa9ff" stroke-width="1.25"/>
+            <line x1="170" y1="188" x2="170" y2="200" stroke="#6aa9ff" stroke-width="1.25"/>
+            <line x1="301" y1="188" x2="301" y2="200" stroke="#6aa9ff" stroke-width="1.25"/>
+            <rect x="0" y="200" width="78" height="30" rx="5" fill="#121228" stroke="#3a3a60" stroke-width="0.75"/>
+            <text x="39" y="219" text-anchor="middle" fill="#a0a0c0" class="pd-mono">FILE A</text>
+            <rect x="131" y="200" width="78" height="30" rx="5" fill="#121228" stroke="#3a3a60" stroke-width="0.75"/>
+            <text x="170" y="219" text-anchor="middle" fill="#a0a0c0" class="pd-mono">FILE B</text>
+            <rect x="262" y="200" width="78" height="30" rx="5" fill="#121228" stroke="#3a3a60" stroke-width="0.75"/>
+            <text x="301" y="219" text-anchor="middle" fill="#a0a0c0" class="pd-mono">FILE C</text>
           </svg>
         </div>
       </div>
       <div class="principle reveal">
-        <div class="principle-text"><h4>Auditability</h4><p>Sidecar metadata records what was compressed, how it was reconstructed, what fidelity was measured, and what region index data is available. SNR, RMSE, and correlation are computed and reported for every file.</p></div>
+        <div class="principle-text">
+          <div class="principle-eyebrow">03 VERIFIED RECONSTRUCTION</div>
+          <h4>Auditability</h4>
+          <p>Sidecar metadata records what was compressed, how it was reconstructed, and which fidelity metrics were measured for every file.</p>
+        </div>
         <div class="principle-diagram">
-          <svg width="180" height="130" viewBox="0 0 180 130" xmlns="http://www.w3.org/2000/svg">
-            <rect x="0" y="0" width="180" height="130" rx="6" fill="#121228" stroke="#3a3a60" stroke-width="0.5"/>
-            <text x="90" y="18" text-anchor="middle" fill="#a0a0c0" class="pd-mono" style="letter-spacing:0.1em">RECONSTRUCTION REPORT</text>
-            <line x1="12" y1="26" x2="168" y2="26" stroke="#2a2a42" stroke-width="0.5"/>
-            <text x="12" y="44" fill="#7070a0" class="pd-mono">SNR</text>
-            <text x="168" y="44" text-anchor="end" fill="#e8e8f4" class="pd-mono">46.2 dB</text>
-            <text x="12" y="60" fill="#7070a0" class="pd-mono">RMSE</text>
-            <text x="168" y="60" text-anchor="end" fill="#e8e8f4" class="pd-mono">0.0041</text>
-            <text x="12" y="76" fill="#7070a0" class="pd-mono">CORR.</text>
-            <text x="168" y="76" text-anchor="end" fill="#e8e8f4" class="pd-mono">0.999976</text>
-            <line x1="12" y1="86" x2="168" y2="86" stroke="#2a2a42" stroke-width="0.5"/>
-            <circle cx="18" cy="98" r="5" fill="none" stroke="#1D9E75" stroke-width="1"/>
-            <path d="M15.5 98l1.5 2 3.5-4.5" fill="none" stroke="#1D9E75" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
-            <text x="28" y="101" fill="#a0a0c0" class="pd-mono">VERIFIED</text>
-            <circle cx="18" cy="114" r="5" fill="none" stroke="#1D9E75" stroke-width="1"/>
-            <path d="M15.5 114l1.5 2 3.5-4.5" fill="none" stroke="#1D9E75" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
-            <text x="28" y="117" fill="#a0a0c0" class="pd-mono">INDEXED</text>
+          <svg viewBox="0 0 340 270" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0" y="0" width="330" height="260" rx="10" fill="#0c0c1a" stroke="#3a3a60" stroke-width="0.75"/>
+            <text x="165" y="34" text-anchor="middle" fill="#a0a0c0" class="pd-mono" style="letter-spacing:0.1em">RECONSTRUCTION REPORT</text>
+            <line x1="24" y1="48" x2="306" y2="48" stroke="#2a2a42" stroke-width="0.75"/>
+            <text x="24" y="78" fill="#7070a0" class="pd-mono">SNR</text>
+            <text x="306" y="78" text-anchor="end" fill="#e8e8f4" class="pd-mono">46.2 dB</text>
+            <text x="24" y="106" fill="#7070a0" class="pd-mono">RMSE</text>
+            <text x="306" y="106" text-anchor="end" fill="#e8e8f4" class="pd-mono">0.0041</text>
+            <text x="24" y="134" fill="#7070a0" class="pd-mono">CORRELATION</text>
+            <text x="306" y="134" text-anchor="end" fill="#e8e8f4" class="pd-mono">0.999976</text>
+            <line x1="24" y1="152" x2="306" y2="152" stroke="#2a2a42" stroke-width="0.75"/>
+            <circle cx="36" cy="174" r="8" fill="none" stroke="#1D9E75" stroke-width="1.25"/>
+            <path d="M32 174l2.4 3.4 6-7.4" fill="none" stroke="#1D9E75" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="54" y="179" fill="#a0a0c0" class="pd-mono">VERIFIED</text>
+            <circle cx="36" cy="202" r="8" fill="none" stroke="#1D9E75" stroke-width="1.25"/>
+            <path d="M32 202l2.4 3.4 6-7.4" fill="none" stroke="#1D9E75" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="54" y="207" fill="#a0a0c0" class="pd-mono">INDEXED</text>
+            <circle cx="36" cy="230" r="8" fill="none" stroke="#1D9E75" stroke-width="1.25"/>
+            <path d="M32 230l2.4 3.4 6-7.4" fill="none" stroke="#1D9E75" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="54" y="235" fill="#a0a0c0" class="pd-mono">RECONSTRUCTABLE</text>
           </svg>
         </div>
       </div>
       <div class="principle reveal">
-        <div class="principle-text"><h4>Less data movement</h4><p>Researchers can avoid pulling an entire raw capture just to inspect one region or run one test.</p></div>
+        <div class="principle-text">
+          <div class="principle-eyebrow">04 TARGETED TRANSFER</div>
+          <h4>Smaller working archive</h4>
+          <p>Researchers can inspect one region or run one test without pulling an entire raw capture through the workflow.</p>
+        </div>
         <div class="principle-diagram">
-          <svg width="180" height="130" viewBox="0 0 180 130" xmlns="http://www.w3.org/2000/svg">
-            <text x="0" y="10" class="pd-label">Current</text>
-            <rect x="0" y="16" width="76" height="18" rx="3" fill="#121228" stroke="#3a3a60" stroke-width="0.5"/>
-            <text x="38" y="28" text-anchor="middle" fill="#a0a0c0" class="pd-mono">5.2 TB</text>
-            <line x1="38" y1="34" x2="38" y2="44" stroke="#3a3a60" stroke-width="0.5"/>
-            <polygon points="35,44 41,44 38,49" fill="#3a3a60"/>
-            <rect x="0" y="50" width="76" height="16" rx="3" fill="none" stroke="#D85A30" stroke-width="0.5"/>
-            <text x="38" y="61" text-anchor="middle" fill="#D85A30" class="pd-mono">DL 5.2 TB</text>
-            <line x1="38" y1="66" x2="38" y2="76" stroke="#3a3a60" stroke-width="0.5"/>
-            <polygon points="35,76 41,76 38,81" fill="#3a3a60"/>
-            <text x="38" y="92" text-anchor="middle" fill="#7070a0" class="pd-mono">1 REGION</text>
-            <line x1="88" y1="0" x2="88" y2="130" stroke="#2a2a42" stroke-width="0.5"/>
-            <text x="100" y="10" class="pd-label">Noema</text>
-            <rect x="100" y="16" width="76" height="18" rx="3" fill="#121228" stroke="#3a3a60" stroke-width="0.5"/>
-            <text x="138" y="28" text-anchor="middle" fill="#a0a0c0" class="pd-mono">5.2 TB</text>
-            <line x1="138" y1="34" x2="138" y2="44" stroke="#3a3a60" stroke-width="0.5"/>
-            <polygon points="135,44 141,44 138,49" fill="#3a3a60"/>
-            <text x="138" y="58" text-anchor="middle" fill="#7070a0" class="pd-mono">LOCATE</text>
-            <line x1="138" y1="62" x2="138" y2="72" stroke="#6aa9ff" stroke-width="0.5"/>
-            <polygon points="135,72 141,72 138,77" fill="#6aa9ff"/>
-            <rect x="100" y="78" width="76" height="16" rx="3" fill="rgba(106,169,255,0.1)" stroke="#6aa9ff" stroke-width="1"/>
-            <text x="138" y="89" text-anchor="middle" fill="#6aa9ff" class="pd-mono">DL 40 MB</text>
-            <line x1="138" y1="94" x2="138" y2="104" stroke="#3a3a60" stroke-width="0.5"/>
-            <polygon points="135,104 141,104 138,109" fill="#3a3a60"/>
-            <text x="138" y="120" text-anchor="middle" fill="#7070a0" class="pd-mono">INSPECT</text>
+          <svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="18" class="pd-label">Current workflow</text>
+            <rect x="0" y="30" width="168" height="36" rx="6" fill="#121228" stroke="#3a3a60" stroke-width="0.75"/>
+            <text x="84" y="53" text-anchor="middle" fill="#a0a0c0" class="pd-mono">5.2 TB ARCHIVE</text>
+            <line x1="84" y1="66" x2="84" y2="88" stroke="#3a3a60" stroke-width="0.75"/>
+            <rect x="0" y="88" width="168" height="34" rx="6" fill="none" stroke="#D85A30" stroke-width="0.75"/>
+            <text x="84" y="110" text-anchor="middle" fill="#D85A30" class="pd-mono">DOWNLOAD 5.2 TB</text>
+            <line x1="84" y1="122" x2="84" y2="144" stroke="#3a3a60" stroke-width="0.75"/>
+            <text x="84" y="166" text-anchor="middle" fill="#7070a0" class="pd-mono">INSPECT 1 REGION</text>
+            <line x1="196" y1="0" x2="196" y2="270" stroke="#2a2a42" stroke-width="0.75"/>
+            <text x="220" y="18" class="pd-label">With Noema</text>
+            <rect x="220" y="30" width="168" height="36" rx="6" fill="#121228" stroke="#3a3a60" stroke-width="0.75"/>
+            <text x="304" y="53" text-anchor="middle" fill="#a0a0c0" class="pd-mono">5.2 TB ARCHIVE</text>
+            <line x1="304" y1="66" x2="304" y2="88" stroke="#3a3a60" stroke-width="0.75"/>
+            <text x="304" y="110" text-anchor="middle" fill="#7070a0" class="pd-mono">LOCATE REGION</text>
+            <line x1="304" y1="118" x2="304" y2="140" stroke="#6aa9ff" stroke-width="1.25"/>
+            <rect x="220" y="140" width="168" height="34" rx="6" fill="rgba(106,169,255,0.12)" stroke="#6aa9ff" stroke-width="1.5"/>
+            <text x="304" y="162" text-anchor="middle" fill="#6aa9ff" class="pd-mono" style="font-weight:600">DOWNLOAD 40 MB</text>
+            <line x1="304" y1="174" x2="304" y2="196" stroke="#3a3a60" stroke-width="0.75"/>
+            <text x="304" y="218" text-anchor="middle" fill="#7070a0" class="pd-mono">INSPECT REGION</text>
           </svg>
         </div>
       </div>
