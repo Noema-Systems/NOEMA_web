@@ -28,7 +28,7 @@ const srcFmt = formatSize(gb);
 const cmpFmt = `${formatSize(compressedHigh)} - ${formatSize(compressedLow)}`;
     document.getElementById('pipe-source').textContent = srcFmt;
     document.getElementById('pipe-compressed').textContent = cmpFmt;
-    document.getElementById('pipe-saved').textContent = `${savedLowPct}-${savedHighPct}% smaller`;
+    document.getElementById('pipe-saved').textContent = `${savedLowPct} - ${savedHighPct}% smaller`;
     document.getElementById('pipe-reconstruct').textContent = srcFmt;
     document.getElementById('dataset-display').textContent = srcFmt;
   }
