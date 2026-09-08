@@ -1134,3 +1134,36 @@ footer {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
+
+
+/* SAR-inspired Earth hero background. Original layout and carousels preserved. */
+.hero {
+  background: #050d1c url('../images/sar-earth-hero-v2.png') center center / cover no-repeat;
+}
+#hero-canvas { visibility: hidden; }
+.hero-vignette {
+  pointer-events: none;
+  background:
+    linear-gradient(to right, rgba(2,8,20,.82) 0%, rgba(2,8,20,.46) 42%, rgba(2,8,20,.05) 75%),
+    linear-gradient(to bottom, rgba(2,8,20,.10) 0%, transparent 50%, rgba(0,0,8,.90) 100%);
+}
+@media (max-width: 768px) {
+  .hero { background-position: 62% center; }
+}
+
+/* Lightweight orbital drift: one existing image, compositor-only transform. */
+.hero { background: #050d1c; }
+.hero::before {
+  content: ''; position: absolute; inset: -4%; z-index: 0; pointer-events: none;
+  background: url('../images/sar-earth-hero-v2.png') center / cover no-repeat;
+  animation: sar-orbital-drift 28s ease-in-out infinite alternate;
+}
+@keyframes sar-orbital-drift {
+  from { transform: translate3d(-1%,0,0) scale(1); }
+  to { transform: translate3d(1%,1%,0) scale(1.055); }
+}
+.hero.motion-paused::before { animation-play-state: paused; }
+@media (max-width: 768px) {
+  .hero::before { background-position: 62% center; }
+  }
+@media (prefers-reduced-motion: reduce) { .hero:not(.motion-enabled)::before { animation-play-state: paused; } }

@@ -78,25 +78,25 @@
   <div class="hero-vignette"></div>
 
   <div class="hero-content">
-    <div class="hero-badge"><span class="bdot"></span>Signal Compression</div>
-    <h1>Signal-domain compression<br>for raw radar, RF,<br><em>and SAR data.</em></h1>
-    <p class="hero-sub">NOEMA compresses raw I/Q, radar, RF, and SAR datasets into smaller indexed working archives that remain reconstructable, fidelity-audited, and usable by downstream workflows.</p>
+    <div class="hero-badge"><span class="bdot"></span>SAR Data Compression</div>
+    <h1>Compress raw SAR data.<br><em>Keep it accessible.</em></h1>
+    <p class="hero-sub">NOEMA compresses raw SAR I/Q into smaller, indexed archives. Reconstruct full signals or selected blocks, and measure fidelity against the source.</p>
     <div class="hero-actions">
-      <button class="btn-white" onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})">Request access</button>
-      <button class="btn-outline" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">How it works &rarr;</button>
+      <button class="btn-white" onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})">Request evaluation</button>
+      <button class="btn-outline" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">Explore the workflow &rarr;</button>
     </div>
   </div>
 
   <div class="hero-stat">
-    <div class="ratio-big"><span>2.3-8.6</span><span class="ratio-x">x</span></div>
-    <div class="ratio-label">TESTED RANGE</div>
-    <div class="ratio-sub">ADAPTIVE &middot; HIGH-FIDELITY &middot; INDEXED</div>
+    <div class="ratio-big"><span>2.33–3.54</span><span class="ratio-x">x</span></div>
+    <div class="ratio-label">NISAR · VS UNCOMPRESSED I/Q</div>
+    <div class="ratio-sub">BITSTREAM ONLY · METADATA ADDITIONAL</div>
   </div>
 
   <div class="hero-bar">
     <div class="hero-bar-track">
       <div class="bar-cell on"><span class="dot-sm live"></span>Codec active</div>
-      <div class="bar-cell"><span class="dot-sm"></span>Raw signal data compressed</div>
+      <div class="bar-cell"><span class="dot-sm"></span>Raw SAR data compressed</div>
       <div class="bar-cell"><span class="dot-sm"></span>Indexed working archive</div>
       <div class="bar-cell"><span class="dot-sm"></span>Fidelity-audited reconstruction</div>
       <div class="bar-cell"><span class="dot-sm"></span>On-premises &middot; Air-gapped &middot; Cloud</div>
@@ -181,8 +181,8 @@
   <div id="for">
     <div class="section-pad">
       <span class="kicker">Who it's for</span>
-      <h2 class="section-h2">Designed for demanding signal pipelines.</h2>
-      <p class="section-preamble">Raw signal data is expensive to store, slow to transfer, and difficult to keep available for future replay, analysis, and processing. NOEMA reduces data volume while keeping reconstruction and downstream use in view.</p>
+      <h2 class="section-h2">Built for raw SAR archives and processing.</h2>
+      <p class="section-preamble">NOEMA helps SAR mission, archive, and processing teams reduce raw I/Q data volume, reconstruct selected signal blocks, and measure reconstruction fidelity against the source.</p>
     </div>
     <div class="cards-grid">
       <div class="who-card reveal">
@@ -190,29 +190,29 @@
           <img src="images/sat11.webp" alt="Satellite in orbit" loading="lazy">
         </div>
         <div class="card-body">
-          <div class="card-cat">Satellite and SAR</div>
-          <div class="card-title">Every reduction in Level-0 data volume matters.</div>
-          <p class="card-text">SAR and radar signal data can be compressed at the source, on the ground, or between archive layers. Built for workflows where preservation, reconstruction fidelity, and downstream processing compatibility matter.</p>
+          <div class="card-cat">SAR missions & ground systems</div>
+          <div class="card-title">Reduce the raw SAR payload.</div>
+          <p class="card-text">Compress Level-0 SAR I/Q into a smaller bitstream with indexed metadata. Evaluate storage and transfer savings alongside your existing ground workflow. Tested on NISAR L-band RRSD products.</p>
         </div>
       </div>
       <div class="who-card reveal">
         <div class="card-img-box" style="--d:1.8s">
-          <img src="images/EW.webp" alt="Defense and SIGINT operations" loading="lazy">
+          <img src="images/sar-earth-hero.png" alt="SAR-inspired Earth illustration" loading="lazy">
         </div>
         <div class="card-body">
-          <div class="card-cat">Defense and SIGINT</div>
-          <div class="card-title">Operational signal data often needs to remain local, auditable, and replayable.</div>
-          <p class="card-text">Deployable on-premises, in air-gapped environments, or close to the point of collection. Supports workflows where bandwidth is constrained, storage is limited, and reconstruction fidelity matters.</p>
+          <div class="card-cat">SAR archives & data centers</div>
+          <div class="card-title">Access selected blocks without a full decode.</div>
+          <p class="card-text">Use the sidecar index to locate and reconstruct individual signal blocks without decoding the entire bitstream. Keep compressed SAR data accessible for later analysis and reprocessing.</p>
         </div>
       </div>
       <div class="who-card reveal">
         <div class="card-img-box" style="--d:3.6s">
-          <img src="images/spectrum.webp" alt="RF spectrum monitoring" loading="lazy">
+          <img src="images/sar-coast.jpg" alt="SIR-C/X-SAR radar image of County Kerry, Ireland; NASA/JPL" loading="lazy">
         </div>
         <div class="card-body">
-          <div class="card-cat">Spectrum monitoring and RF intelligence</div>
-          <div class="card-title">Continuous RF capture creates datasets that are difficult to revisit.</div>
-          <p class="card-text">Raw RF recordings can be compressed, indexed, and reconstructed so analysts can retrieve selected windows, replay events, and preserve signal evidence.</p>
+          <div class="card-cat">SAR processing & research</div>
+          <div class="card-title">Measure fidelity before changing your pipeline.</div>
+          <p class="card-text">Compare reconstructed I/Q with the source using SNR, normalized error, and correlation. Tune compression around your fidelity targets, then validate focused-image quality and downstream processing separately.</p>
         </div>
       </div>
     </div>
@@ -567,7 +567,7 @@ let frameCount = 0;
    ~1400 stars, sprite-based (cheap), auto-pauses when hero is off-screen. ---- */
 (function(){
   const c = document.getElementById('hero-canvas');
-  if(!c) return;
+  if(!c || getComputedStyle(c).visibility === "hidden") return;
   const ctx = c.getContext('2d');
   const heroEl = c.closest('.hero');
   let W, H, t = 0;
@@ -854,5 +854,6 @@ let frameCount = 0;
   draw();
 })();
 </script>
+<script src="js/hero-motion.js"></script>
 </body>
 </html>
