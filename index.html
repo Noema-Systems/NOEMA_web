@@ -43,18 +43,18 @@
   <div class="nav-links">
     <a onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">How it works</a>
     <a onclick="document.getElementById('for').scrollIntoView({behavior:'smooth'})">Who it's for</a>
-    <a onclick="document.getElementById('pilot').scrollIntoView({behavior:'smooth'})">Try it</a>
+    <a onclick="document.getElementById('pilot').scrollIntoView({behavior:'smooth'})">Evaluation</a>
   </div>
-  <button class="nav-cta" onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})">Request access</button>
+  <a class="nav-cta" href="mailto:info@noemasystems.com">Request access</a>
 </nav>
 
 <!-- Mobile dropdown menu -->
 <div class="nav-dropdown" id="navDropdown">
   <a onclick="closeNav(); document.getElementById('how').scrollIntoView({behavior:'smooth'})">How it works</a>
   <a onclick="closeNav(); document.getElementById('for').scrollIntoView({behavior:'smooth'})">Who it's for</a>
-  <a onclick="closeNav(); document.getElementById('pilot').scrollIntoView({behavior:'smooth'})">Try it</a>
+  <a onclick="closeNav(); document.getElementById('pilot').scrollIntoView({behavior:'smooth'})">Evaluation</a>
   <a onclick="closeNav(); document.getElementById('signup').scrollIntoView({behavior:'smooth'})">Contact</a>
-  <button class="nav-dropdown-cta" onclick="closeNav(); document.getElementById('signup').scrollIntoView({behavior:'smooth'})">Request access</button>
+  <a class="nav-dropdown-cta" onclick="closeNav()" href="mailto:info@noemasystems.com">Request access</a>
 </div>
 
 <!-- HERO -->
@@ -82,7 +82,7 @@
     <h1>Compress raw SAR data.<br><em>Keep it accessible.</em></h1>
     <p class="hero-sub">NOEMA compresses raw SAR I/Q into smaller, indexed archives. Reconstruct full signals or selected blocks, and measure fidelity against the source.</p>
     <div class="hero-actions">
-      <button class="btn-white" onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})">Request evaluation</button>
+      <a class="btn-white" href="mailto:info@noemasystems.com">Request access</a>
       <button class="btn-outline" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">Explore the workflow &rarr;</button>
     </div>
   </div>
@@ -370,7 +370,7 @@
     </div>
   </div>
 
-  <!-- TRY IT -->
+  <!-- EVALUATION -->
   <div id="pilot">
     <div class="tryit-banner reveal">
       <div class="tryit-top">
@@ -408,48 +408,22 @@
         </div>
       </div>
       <div class="tryit-cta-row">
-        <button class="btn-white" onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})">Request access</button>
-        <button class="tryit-arrow" onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})">
+        <a class="btn-white" href="mailto:info@noemasystems.com">Request access</a>
+        <a class="tryit-arrow" aria-label="Email to request access" href="mailto:info@noemasystems.com">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
+        </a>
       </div>
     </div>
   </div>
 
-  <!-- FORM -->
+  <!-- CONTACT -->
   <div id="signup">
-    <div class="form-section" style="border-top: none; padding: 2.5rem 0 2rem;">
+    <div class="form-section contact-section">
       <div class="form-left reveal">
-        <h2>Request access</h2>
-        <p>Human response within 24 hours. No automated sequences.</p>
+        <h2>Contact to request access</h2>
       </div>
       <div class="reveal">
-        <form id="accessForm" action="https://formspree.io/f/myklvjqy" method="POST">
-          <div class="f-row">
-            <div class="f-group"><label class="f-label">First name</label><input class="fi" type="text" name="first_name" placeholder="First name" required></div>
-            <div class="f-group"><label class="f-label">Last name</label><input class="fi" type="text" name="last_name" placeholder="Last name" required></div>
-          </div>
-          <div class="f-group"><label class="f-label">Work email</label><input class="fi" type="email" name="email" placeholder="you@org.com" required></div>
-          <div class="f-group"><label class="f-label">Organisation</label><input class="fi" type="text" name="organisation" placeholder="Organization name"></div>
-          <div class="f-group">
-            <label class="f-label">Sector</label>
-            <select class="fs" name="sector" required>
-              <option value="" disabled selected>Select sector</option>
-              <option>Autonomous Vehicles</option>
-              <option>Ground station operator</option>
-              <option>Satellite / SAR -- commercial</option>
-              <option>Satellite / SAR -- government</option>
-              <option>Defense / SIGINT</option>
-              <option>Telecom R&amp;D</option>
-              <option>Research institution</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="f-group"><label class="f-label">Signal type or use case</label><input class="fi" type="text" name="signal_type" placeholder="e.g. SAR Level-0, radar ADC, wideband I/Q"></div>
-          <button type="submit" class="fsub">Request access &rarr;</button>
-          <p class="fnote">Human response within 24 hours &middot; No automated sequences</p>
-        </form>
-        <div id="formSuccess"><p>Request received.</p><small>We will be in touch within 24 hours.</small></div>
+        <a class="contact-email" href="mailto:info@noemasystems.com">info@noemasystems.com &rarr;</a>
       </div>
     </div>
   </div>
@@ -460,7 +434,7 @@
   <div class="footer-links">
     <a onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">How it works</a>
     <a onclick="document.getElementById('for').scrollIntoView({behavior:'smooth'})">Who it's for</a>
-    <a onclick="document.getElementById('pilot').scrollIntoView({behavior:'smooth'})">Try it</a>
+    <a onclick="document.getElementById('pilot').scrollIntoView({behavior:'smooth'})">Evaluation</a>
     <a href="mailto:info@noemasystems.com">info@noemasystems.com</a>
   </div>
   <div class="footer-legal">

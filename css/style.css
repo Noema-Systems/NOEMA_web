@@ -1167,3 +1167,12 @@ footer {
   .hero::before { background-position: 62% center; }
   }
 @media (prefers-reduced-motion: reduce) { .hero:not(.motion-enabled)::before { animation-play-state: paused; } }
+
+/* Direct email contact replaces the access form. */
+a.nav-cta, a.nav-dropdown-cta, a.btn-white, a.tryit-arrow { text-decoration: none; }
+a.nav-dropdown-cta { display: block; text-align: center; }
+a.tryit-arrow { display: inline-flex; align-items: center; justify-content: center; }
+.contact-section { border-top: none; padding: 2.5rem 0 2rem; align-items: center; }
+.contact-email { color: #a8d0ff; font-size: clamp(1rem, 2.2vw, 1.5rem); text-decoration: none; overflow-wrap: anywhere; }
+.contact-email:hover { color: #fff; text-decoration: underline; }
+.contact-email:focus-visible { outline: 2px solid #6aa9ff; outline-offset: 5px; }
