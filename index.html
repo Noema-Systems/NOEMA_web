@@ -42,18 +42,18 @@
   <img src="images/noema_logo.png" alt="NOEMA" class="nav-logo-img" onclick="window.scrollTo({top:0,behavior:'smooth'})">
   <div class="nav-links">
     <a onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">How it works</a>
-    <a onclick="document.getElementById('for').scrollIntoView({behavior:'smooth'})">Who it's for</a>
-    <a href="#pilot">Evaluate</a>
+    <a href="#for">Applications</a>
+    <a href="#principles">Technical notes</a>
   </div>
-  <a class="nav-cta" href="#pilot">Request access</a>
+  <a class="nav-cta" href="mailto:info@noemasystems.com">Contact</a>
 </nav>
 
 <!-- Mobile dropdown menu -->
 <div class="nav-dropdown" id="navDropdown">
   <a onclick="closeNav(); document.getElementById('how').scrollIntoView({behavior:'smooth'})">How it works</a>
-  <a onclick="closeNav(); document.getElementById('for').scrollIntoView({behavior:'smooth'})">Who it's for</a>
-  <a href="#pilot" onclick="closeNav()">Evaluate</a>
-  <a class="nav-dropdown-cta" onclick="closeNav()" href="#pilot">Request access</a>
+  <a href="#for" onclick="closeNav()">Applications</a>
+  <a href="#principles" onclick="closeNav()">Technical notes</a>
+  <a class="nav-dropdown-cta" onclick="closeNav()" href="mailto:info@noemasystems.com">Contact</a>
 </div>
 
 <!-- HERO -->
@@ -61,12 +61,7 @@
   <!-- Galaxy / data signal canvas -->
   <canvas id="hero-canvas"></canvas>
 
-  <!-- Control room HUD -- right side only -->
-  <div class="hud hud-tr">
-    <div class="hud-line">UTC <span id="hud-time" class="hud-val">00:00:00</span></div>
-    <div class="hud-line">STATUS <span class="hud-val">ACTIVE</span></div>
-    <div class="hud-line">CODEC <span class="hud-val">RUNNING</span></div>
-  </div>
+  <div class="hud hud-tr"><div class="hud-line">RESEARCH PROTOTYPE</div></div>
 
   <!-- Corner brackets -->
   <div class="corner corner-tl"></div>
@@ -78,10 +73,10 @@
 
   <div class="hero-content">
     <div class="hero-badge"><span class="bdot"></span>SAR Data Compression</div>
-    <h1>Compress raw SAR data.<br><em>Keep it accessible.</em></h1>
-    <p class="hero-sub">NOEMA compresses raw SAR I/Q into smaller, indexed archives. Reconstruct full signals or selected blocks, and measure fidelity against the source.</p>
+    <h1>NOEMA is a compression codec<br>for raw SAR I/Q data.</h1>
+    <p class="hero-sub">An indexed sidecar supports selective decoding of signal regions. A shared codebook maps symbols; round-trip reconstruction is checked with signal-level metrics.</p>
     <div class="hero-actions">
-      <a class="btn-white" href="mailto:info@noemasystems.com">Request access</a>
+      <a class="btn-white" href="mailto:info@noemasystems.com">Contact</a>
       <button class="btn-outline" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">Explore the workflow &rarr;</button>
     </div>
   </div>
@@ -89,12 +84,12 @@
   <div class="hero-stat">
     <div class="ratio-big"><span>2.3 - 8.6</span><span class="ratio-x">x</span></div>
     <div class="ratio-label">on tested SAR archives</div>
-    <div class="ratio-sub">BITSTREAM ONLY · METADATA ADDITIONAL</div>
+    <div class="ratio-sub">DATASET-DEPENDENT · NISAR L-BAND LEVEL-0 TESTS · SIDECAR AND CODEBOOK ADDITIONAL</div>
   </div>
 
   <div class="hero-bar">
     <div class="hero-bar-track">
-      <div class="bar-cell on"><span class="dot-sm live"></span>Codec active</div>
+      <div class="bar-cell on"><span class="dot-sm live"></span>Research prototype</div>
       <div class="bar-cell"><span class="dot-sm"></span>Raw SAR data compressed</div>
       <div class="bar-cell"><span class="dot-sm"></span>Indexed working archive</div>
       <div class="bar-cell"><span class="dot-sm"></span>Fidelity-audited reconstruction</div>
@@ -108,21 +103,21 @@
   <div id="how">
     <div class="section-pad" style="border-top: none; padding-top: 0;">
       <span class="kicker">How it works</span>
-      <h2 class="section-h2">Four operations. Built for high-fidelity reconstruction.</h2>
-      <p class="section-preamble">NOEMA reduces raw signal data volume without requiring changes to existing recorders, archives, processors, or replay workflows.</p>
+      <h2 class="section-h2">SAR signal compression and reconstruction.</h2>
+      <p class="section-preamble">NOEMA is a compression codec for raw SAR I/Q data with an index that allows selective decoding of regions. Results are dataset-dependent. Tested on NISAR L-band Level-0 products.</p>
     </div>
     <div class="ops-grid">
       <div class="op-card reveal">
         <div class="op-num">01 Intake</div>
         <div class="op-title">Raw signal data enters NOEMA.</div>
-        <p class="op-desc">Built for high-volume I/Q, radar, RF, and SAR datasets. Runs from defaults, with tuning available when fidelity, throughput, or archive constraints matter.</p>
+        <p class="op-desc">The codec processes Level-0 SAR I/Q and can be configured around fidelity and throughput requirements.</p>
         <div class="op-specs"><span>Raw I/Q data</span><span>Level-0 signal data</span><span>Runs from defaults</span></div>
       </div>
       <div class="op-card reveal">
         <div class="op-num">02 Compress</div>
         <div class="op-title">Create a smaller working archive.</div>
         <p class="op-desc">NOEMA compresses signal data according to the statistical profile of each dataset. Compression performance depends on format, entropy, quantization, and fidelity target.</p>
-        <div class="op-specs"><span>2.3-8.6x tested range</span><span>Dataset-dependent results</span><span>Batch or real-time</span></div>
+        <div class="op-specs"><span>2.3-8.6x tested range</span><span>Dataset-dependent results</span><span>Batch processing</span></div>
       </div>
       <div class="op-card reveal">
         <div class="op-num">03 Index and store</div>
@@ -142,7 +137,7 @@
     <div class="pipeline-wrap reveal">
       <div class="pipeline-flow">
         <div class="pipe-node">
-          <div class="node-label">Your dataset</div>
+          <div class="node-label">Example dataset</div>
           <div class="node-val" id="pipe-source">50 TB</div>
           <div class="node-note">raw signal data</div>
         </div>
@@ -168,7 +163,7 @@
         <div class="pipe-node"><div class="node-label">Reconstruct</div><div class="node-val" id="pipe-reconstruct">50 TB</div><div class="node-note">fidelity-audited output</div></div>
       </div>
       <div class="ratio-slider">
-        <label>Your dataset size</label>
+        <label>Example dataset size</label>
         <input type="range" id="dataset-slider" min="0" max="100" step="1" value="68">
         <span class="ratio-value" id="dataset-display">50 TB</span>
       </div>
@@ -179,9 +174,9 @@
   <!-- WHO IT IS FOR -->
   <div id="for">
     <div class="section-pad">
-      <span class="kicker">Who it's for</span>
-      <h2 class="section-h2">Built for raw SAR archives and processing.</h2>
-      <p class="section-preamble">NOEMA helps SAR mission, archive, and processing teams reduce raw I/Q data volume, reconstruct selected signal blocks, and measure reconstruction fidelity against the source.</p>
+      <span class="kicker">Applications</span>
+      <h2 class="section-h2">Designed for raw SAR archives and processing.</h2>
+      <p class="section-preamble">NOEMA can be used in SAR mission, archive, and processing workflows to reduce raw I/Q volume, reconstruct selected signal blocks, and measure reconstruction fidelity.</p>
     </div>
     <div class="cards-grid">
       <div class="who-card reveal">
@@ -191,7 +186,7 @@
         <div class="card-body">
           <div class="card-cat">SAR missions & ground systems</div>
           <div class="card-title">Reduce the raw SAR payload.</div>
-          <p class="card-text">Compress Level-0 SAR I/Q into a smaller bitstream with indexed metadata. Evaluate storage and transfer savings alongside your existing ground workflow. Tested on NISAR L-band RRSD products.</p>
+          <p class="card-text">Compress Level-0 SAR I/Q into a smaller bitstream with indexed metadata. NISAR L-band RRSD products have been used in testing.</p>
         </div>
       </div>
       <div class="who-card reveal">
@@ -200,8 +195,8 @@
         </div>
         <div class="card-body">
           <div class="card-cat">SAR archives & data centers</div>
-          <div class="card-title">Access selected blocks without a full decode.</div>
-          <p class="card-text">Use the sidecar index to locate and reconstruct individual signal blocks without decoding the entire bitstream. Keep compressed SAR data accessible for later analysis and reprocessing.</p>
+          <div class="card-title">Selective decoding from indexed archives.</div>
+          <p class="card-text">The sidecar index locates signal blocks for selective reconstruction without decoding the entire bitstream. This supports access to subsets of an archive for analysis and reprocessing.</p>
         </div>
       </div>
       <div class="who-card reveal">
@@ -210,8 +205,8 @@
         </div>
         <div class="card-body">
           <div class="card-cat">SAR processing & research</div>
-          <div class="card-title">Measure fidelity before changing your pipeline.</div>
-          <p class="card-text">Compare reconstructed I/Q with the source using SNR, normalized error, and correlation. Tune compression around your fidelity targets, then validate focused-image quality and downstream processing separately.</p>
+          <div class="card-title">Measure signal fidelity after reconstruction.</div>
+          <p class="card-text">Round-trip comparisons use SNR, normalized error, and correlation. Focused-image quality and downstream processing require separate validation.</p>
         </div>
       </div>
     </div>
@@ -221,7 +216,7 @@
   <div id="principles">
     <div class="section-pad">
       <span class="kicker">Technical advantages</span>
-      <h2 class="section-h2">Selective reconstruction. Shared representation. Verified compression.</h2>
+      <h2 class="section-h2">Sidecar index. Shared codebook. Verified reconstruction.</h2>
     </div>
     <div class="tech-advantages-grid">
       <div class="principle reveal">
@@ -346,21 +341,21 @@
           <svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
             <text x="0" y="18" class="pd-label">Current workflow</text>
             <rect x="0" y="30" width="168" height="36" rx="6" fill="#121228" stroke="#3a3a60" stroke-width="0.75"/>
-            <text x="84" y="53" text-anchor="middle" fill="#a0a0c0" class="pd-mono">5.2 TB ARCHIVE</text>
+            <text x="84" y="53" text-anchor="middle" fill="#a0a0c0" class="pd-mono">EXAMPLE ARCHIVE · 5.2 TB</text>
             <line x1="84" y1="66" x2="84" y2="88" stroke="#3a3a60" stroke-width="0.75"/>
             <rect x="0" y="88" width="168" height="34" rx="6" fill="none" stroke="#D85A30" stroke-width="0.75"/>
-            <text x="84" y="110" text-anchor="middle" fill="#D85A30" class="pd-mono">DOWNLOAD 5.2 TB</text>
+            <text x="84" y="110" text-anchor="middle" fill="#D85A30" class="pd-mono">TRANSFER FULL ARCHIVE</text>
             <line x1="84" y1="122" x2="84" y2="144" stroke="#3a3a60" stroke-width="0.75"/>
             <text x="84" y="166" text-anchor="middle" fill="#7070a0" class="pd-mono">INSPECT 1 REGION</text>
             <line x1="196" y1="0" x2="196" y2="270" stroke="#2a2a42" stroke-width="0.75"/>
             <text x="220" y="18" class="pd-label">With Noema</text>
             <rect x="220" y="30" width="168" height="36" rx="6" fill="#121228" stroke="#3a3a60" stroke-width="0.75"/>
-            <text x="304" y="53" text-anchor="middle" fill="#a0a0c0" class="pd-mono">5.2 TB ARCHIVE</text>
+            <text x="304" y="53" text-anchor="middle" fill="#a0a0c0" class="pd-mono">EXAMPLE ARCHIVE · 5.2 TB</text>
             <line x1="304" y1="66" x2="304" y2="88" stroke="#3a3a60" stroke-width="0.75"/>
             <text x="304" y="110" text-anchor="middle" fill="#7070a0" class="pd-mono">LOCATE REGION</text>
             <line x1="304" y1="118" x2="304" y2="140" stroke="#6aa9ff" stroke-width="1.25"/>
             <rect x="220" y="140" width="168" height="34" rx="6" fill="rgba(106,169,255,0.12)" stroke="#6aa9ff" stroke-width="1.5"/>
-            <text x="304" y="162" text-anchor="middle" fill="#6aa9ff" class="pd-mono" style="font-weight:600">DOWNLOAD 40 MB</text>
+            <text x="304" y="162" text-anchor="middle" fill="#6aa9ff" class="pd-mono" style="font-weight:600">TRANSFER SELECTED REGION</text>
             <line x1="304" y1="174" x2="304" y2="196" stroke="#3a3a60" stroke-width="0.75"/>
             <text x="304" y="218" text-anchor="middle" fill="#7070a0" class="pd-mono">INSPECT REGION</text>
           </svg>
@@ -376,27 +371,27 @@
         <div>
           <div class="shadow-badge">
             <span class="shadow-badge-dot"></span>
-            <span class="shadow-badge-text">SHADOW MODE -- RUN BESIDE YOUR EXISTING PIPELINE. ZERO DISRUPTION.</span>
+            <span class="shadow-badge-text">CAN RUN ALONGSIDE AN EXISTING PIPELINE</span>
           </div>
-          <div class="tryit-heading">Live in your environment<br>the same day.</div>
-          <p class="tryit-sub">No integration required for evaluation. Run NOEMA beside your current workflow and measure compression ratio, storage reduction, reconstruction fidelity, and operational fit on your own signal data.</p>
+          <div class="tryit-heading">Evaluation workflow</div>
+          <p class="tryit-sub">An evaluation can run alongside an existing workflow. Compare compression ratio, storage reduction, reconstruction fidelity, and selective decode behavior on representative SAR data.</p>
           <div class="tryit-badge-section">
             <div class="tryit-badge-track">
               <div class="tryit-badge-line">ON-PREMISES &middot; AIR-GAPPED &middot; CLOUD</div>
-              <div class="tryit-badge-single">NO DATA LEAVES YOUR ENVIRONMENT</div>
-              <div class="tryit-badge-single">EXISTING WORKFLOWS CONTINUE</div>
+              <div class="tryit-badge-single">LOCAL DEPLOYMENT OPTIONS</div>
+              <div class="tryit-badge-single">EXISTING PIPELINE CAN REMAIN IN PLACE</div>
             </div>
           </div>
         </div>
       </div>
       <div class="tryit-steps">
-        <div class="tryit-step"><div class="ts-num">01 Receive</div><div class="ts-title">Evaluation package delivered</div><p class="ts-body">Binary, setup guide, sample workflow, documentation, and test data. Linux, Windows, and ARM deployment options available.</p></div>
+        <div class="tryit-step"><div class="ts-num">01 Receive</div><div class="ts-title">Evaluation setup</div><p class="ts-body">The evaluation setup includes a binary, setup guide, sample workflow, documentation, and test data. Linux, Windows, and ARM deployment options are available.</p></div>
         <div class="tryit-step"><div class="ts-num">02 Deploy</div><div class="ts-title">Configure the run</div><p class="ts-body">Set input location, output location, compute limits, throughput constraints, and fidelity target. Defaults are provided for first-pass evaluation.</p></div>
         <div class="tryit-step"><div class="ts-num">03 Observe</div><div class="ts-title">Results appear automatically</div><p class="ts-body">Review compression ratio, output size, reconstruction metrics, sidecar metadata, and archive reports generated from your own data.</p></div>
-        <div class="tryit-step"><div class="ts-num">04 Review</div><div class="ts-title">Make a technical decision</div><p class="ts-body">Compare storage reduction, transfer impact, reconstruction quality, selective decode behavior, and workflow fit before deciding whether to move forward.</p></div>
+        <div class="tryit-step"><div class="ts-num">04 Review</div><div class="ts-title">Compare technical results</div><p class="ts-body">Compare storage reduction, reconstruction quality, and selective decode behavior on representative SAR data.</p></div>
       </div>
       <div class="deploy-row">
-        <span class="deploy-label">Integrate as</span>
+        <span class="deploy-label">Possible deployment modes</span>
         <div class="deploy-scroller">
           <div class="deploy-track">
             <span class="deploy-item">Drop-in mode</span>
@@ -407,7 +402,7 @@
         </div>
       </div>
       <div class="tryit-cta-row">
-        <a class="btn-white" href="mailto:info@noemasystems.com">Request access</a>
+        <a class="btn-white" href="mailto:info@noemasystems.com">Contact</a>
       </div>
     </div>
   </div>
@@ -418,9 +413,8 @@
   <img src="images/noema_bottom.png" alt="NOEMA" class="footer-logo-img">
   <div class="footer-links">
     <a onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">How it works</a>
-    <a onclick="document.getElementById('for').scrollIntoView({behavior:'smooth'})">Who it's for</a>
-    <a href="mailto:info@noemasystems.com">Request access</a>
-    <a href="mailto:info@noemasystems.com">info@noemasystems.com</a>
+    <a onclick="document.getElementById('for').scrollIntoView({behavior:'smooth'})">Applications</a>
+    <a href="mailto:info@noemasystems.com">Contact</a>
   </div>
   <div class="footer-legal">
     &copy; 2026 NOEMA Data Systems.
@@ -496,15 +490,6 @@ window.addEventListener('resize', function(){
     }, {passive:true});
   });
 })();
-/* ---- UTC CLOCK ---- */
-(function tick(){
-  const d = new Date();
-  const p = n => String(n).padStart(2,'0');
-  const el = document.getElementById('hud-time');
-  if(el) el.textContent = `${p(d.getUTCHours())}:${p(d.getUTCMinutes())}:${p(d.getUTCSeconds())}`;
-  setTimeout(tick, 1000);
-})();
-
 /* ---- SESSION TIMER ---- */
 const sessionStart = Date.now();
 let frameCount = 0;
