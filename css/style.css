@@ -126,9 +126,9 @@ nav {
 
 /* ---- HERO ---- */
 .hero {
-  position: relative; min-height: calc(100svh - 68px);
+  position: relative; min-height: 100vh; min-height: 100svh;
   display: flex; align-items: center; justify-content: flex-start;
-  padding: 4rem 2.5rem 2rem;
+  padding: 5rem 2.5rem 0;
   overflow: hidden;
   background: #000008;
 }
@@ -178,7 +178,7 @@ nav {
 /* Hero content */
 .hero-content {
   position: relative; z-index: 2;
-  max-width: 900px; margin-bottom: 0;
+  max-width: 980px; margin-bottom: 2rem;
 }
 .hero-badge {
   display: inline-flex; align-items: center; gap: 10px;
@@ -198,16 +198,16 @@ nav {
 }
 .hero h1 {
   font-family: var(--serif);
-  font-size: clamp(3.5rem, 5vw, 5rem);
-  font-weight: 300; line-height: 1; letter-spacing: -0.01em;
-  color: var(--white); margin-bottom: 1.1rem;
+  font-size: clamp(3.5rem, 7vw, 6.5rem);
+  font-weight: 300; line-height: 1.05; letter-spacing: -0.01em;
+  color: var(--white); margin-bottom: 1.5rem;
   text-shadow: 0 2px 4px rgba(0,0,0,0.4);
 }
 .hero h1 em { font-style: italic; }
 .hero-sub {
-  font-family: var(--sans); font-size: 1.1rem; font-weight: 400;
-  color: var(--sub); max-width: 650px; line-height: 1.5;
-  margin-bottom: 0.8rem;
+  font-family: var(--sans); font-size: 1.15rem; font-weight: 400;
+  color: var(--sub); max-width: 650px; line-height: 1.6;
+  margin-bottom: 1rem;
 }
 .hero-evidence {
   max-width: 650px; margin-bottom: 1.25rem;
@@ -813,7 +813,7 @@ footer {
   .form-section { grid-template-columns: 1fr; gap: 3rem; }
   .hero-stat   { right: 1.5rem; bottom: 7rem; }
   .hero-bar    { grid-template-columns: 1fr 1fr; }
-  .hero        { padding: 4rem 1.5rem 2rem; min-height: calc(100svh - 68px); }
+  .hero        { padding: 4rem 1.5rem 0; min-height: 100vh; min-height: 100svh; }
   .hero h1     { font-size: clamp(2rem, 6vw, 4rem); }
   .hud         { display: none; }
   .corner      { display: none; }
