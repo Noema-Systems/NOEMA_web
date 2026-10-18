@@ -175,8 +175,8 @@
   <div id="for">
     <div class="section-pad">
       <span class="kicker">Applications</span>
-      <h2 class="section-h2">For SAR archives, pipelines, and distribution.</h2>
-      <p class="section-preamble">Use NOEMA where raw SAR data needs to be stored, moved, or processed. Compression can reduce archive size and transfer volume; indexed access supports deterministic reconstruction of complete files or selected regions.</p>
+      <h2 class="section-h2">For SAR ingestion, archives, and distribution.</h2>
+      <p class="section-preamble">Compress raw SAR I/Q as it enters a workflow, store it in indexed archives, and distribute smaller datasets. The sidecar supports deterministic reconstruction of full signals or selected regions.</p>
     </div>
     <div class="cards-grid">
       <div class="who-card reveal">
@@ -184,9 +184,9 @@
           <img src="images/sat11.webp" alt="Satellite in orbit" loading="lazy">
         </div>
         <div class="card-body">
-          <div class="card-cat">Archives & data centers</div>
-          <div class="card-title">Store more raw SAR data.</div>
-          <p class="card-text">Compress raw I/Q to reduce archive storage requirements while retaining indexed decode locations and reconstruction metadata.</p>
+          <div class="card-cat">Ingestion</div>
+          <div class="card-title">Compress data as it enters.</div>
+          <p class="card-text">Apply NOEMA to raw SAR I/Q at the ingest stage to reduce the volume moving into storage or downstream systems. Measure throughput in the target environment against the required data rate.</p>
         </div>
       </div>
       <div class="who-card reveal">
@@ -194,9 +194,9 @@
           <img src="images/sar-earth-hero.png" alt="SAR-inspired Earth illustration" loading="lazy">
         </div>
         <div class="card-body">
-          <div class="card-cat">Processing pipelines</div>
-          <div class="card-title">Move less data between stages.</div>
-          <p class="card-text">Use compressed SAR data in archive and processing workflows, then reconstruct complete files or selected blocks when downstream stages need them.</p>
+          <div class="card-cat">Archives</div>
+          <div class="card-title">Store more raw SAR data.</div>
+          <p class="card-text">Compress raw I/Q to reduce archive storage requirements while retaining indexed decode locations and reconstruction metadata.</p>
         </div>
       </div>
       <div class="who-card reveal">
@@ -204,9 +204,9 @@
           <img src="images/sar-coast.jpg" alt="SIR-C/X-SAR radar image of County Kerry, Ireland; NASA/JPL" loading="lazy">
         </div>
         <div class="card-body">
-          <div class="card-cat">Distribution & access</div>
-          <div class="card-title">Retrieve selected regions.</div>
-          <p class="card-text">The sidecar index locates signal blocks for selective reconstruction without decoding the entire compressed stream. This can reduce data movement when a workflow needs only part of a dataset. Transfer savings depend on the access path.</p>
+          <div class="card-cat">Distribution</div>
+          <div class="card-title">Move less data between endpoints.</div>
+          <p class="card-text">Distribute compressed SAR data, then use the sidecar index to locate and deterministically reconstruct full signals or selected blocks. Transfer savings depend on the source, destination, and access pattern.</p>
         </div>
       </div>
     </div>
