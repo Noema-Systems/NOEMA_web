@@ -31,7 +31,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20261018">
+<link rel="stylesheet" href="css/style.css?v=20261018b">
 </head>
 <body>
 
@@ -337,23 +337,25 @@
           <p>Designed to run alongside recorders, archives, processors, replay tools, and analysis workflows. Validate integration and throughput in the target pipeline.</p>
         </div>
         <div class="principle-diagram">
-          <div class="workflow-compare" aria-label="Workflow comparison">
+          <div class="workflow-compare" aria-label="Shadow-mode workflow compatibility and L1/L2 product comparison">
+            <div class="workflow-input"><span></span>Raw SAR input · shadow evaluation</div>
             <div class="workflow-lane workflow-lane-current">
-              <div class="workflow-lane-head"><span>Current workflow</span><span>Full archive transfer</span></div>
-              <div class="workflow-flow">
-                <div class="workflow-step"><span>01</span><strong>Archive</strong></div>
-                <div class="workflow-step"><span>02</span><strong>Transfer full archive</strong></div>
-                <div class="workflow-step"><span>03</span><strong>Inspect region</strong></div>
+              <div class="workflow-lane-head"><span>Existing workflow</span><span>Reference path</span></div>
+              <div class="workflow-flow workflow-flow-current">
+                <div class="workflow-step"><span>PROCESS</span><strong>Existing pipeline</strong></div>
+                <div class="workflow-step"><span>OUTPUT</span><strong>L1/L2 products</strong></div>
               </div>
             </div>
             <div class="workflow-lane workflow-lane-noema">
-              <div class="workflow-lane-head"><span>With NOEMA</span><span>Indexed retrieval</span></div>
-              <div class="workflow-flow">
-                <div class="workflow-step"><span>01</span><strong>Archive + index</strong></div>
-                <div class="workflow-step"><span>02</span><strong>Select required blocks</strong></div>
-                <div class="workflow-step"><span>03</span><strong>Transfer, reconstruct, inspect</strong></div>
+              <div class="workflow-lane-head"><span>NOEMA shadow path</span><span>Parallel evaluation</span></div>
+              <div class="workflow-flow workflow-flow-noema">
+                <div class="workflow-step"><span>01</span><strong>Compress</strong></div>
+                <div class="workflow-step workflow-step-compact"><span>02</span><strong>Smaller archive</strong></div>
+                <div class="workflow-step"><span>03</span><strong>Reconstruct</strong></div>
+                <div class="workflow-step"><span>04</span><strong>Same pipeline, L1/L2</strong></div>
               </div>
             </div>
+            <div class="workflow-compare-output"><span>Compare L1/L2 products</span></div>
           </div>
         </div>
       </div>
