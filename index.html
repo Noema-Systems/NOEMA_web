@@ -31,7 +31,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20261018d">
+<link rel="stylesheet" href="css/style.css?v=20261018e">
 </head>
 <body>
 
@@ -337,25 +337,34 @@
           <p>Designed to run alongside recorders, archives, processors, replay tools, and analysis workflows. Validate integration and throughput in the target pipeline.</p>
         </div>
         <div class="principle-diagram">
-          <div class="workflow-compare" aria-label="Parallel SAR processing paths with L1/L2 product comparison">
+          <div class="workflow-compare" aria-label="Raw SAR input branches to an existing workflow and a parallel NOEMA shadow path; outputs are compared">
             <div class="workflow-input"><span></span>Raw SAR input</div>
-            <div class="workflow-lane workflow-lane-current">
-              <div class="workflow-lane-head"><span>Existing workflow</span></div>
-              <div class="workflow-flow workflow-flow-current">
-                <div class="workflow-step"><strong>Existing pipeline</strong></div>
-                <div class="workflow-step"><strong>L1/L2 reference</strong></div>
+            <svg class="workflow-fork" viewBox="0 0 400 48" aria-hidden="true">
+              <path d="M200 2V15H100V42M200 15H300V42" />
+              <path d="M96 37L100 43L104 37M296 37L300 43L304 37" />
+            </svg>
+            <div class="workflow-paths">
+              <div class="workflow-lane workflow-lane-current">
+                <div class="workflow-lane-head"><span>Existing flow</span></div>
+                <div class="workflow-flow">
+                  <div class="workflow-step"><strong>Existing pipeline</strong></div>
+                  <div class="workflow-step"><strong>Products</strong></div>
+                </div>
+              </div>
+              <div class="workflow-lane workflow-lane-noema">
+                <div class="workflow-lane-head"><span>NOEMA shadow</span></div>
+                <div class="workflow-flow">
+                  <div class="workflow-step"><strong>Compression</strong></div>
+                  <div class="workflow-step workflow-step-compact"><strong>Smaller archive</strong></div>
+                  <div class="workflow-step"><strong>Reconstruction</strong></div>
+                </div>
               </div>
             </div>
-            <div class="workflow-lane workflow-lane-noema">
-              <div class="workflow-lane-head"><span>NOEMA shadow path</span></div>
-              <div class="workflow-flow workflow-flow-noema">
-                <div class="workflow-step"><strong>Compress</strong></div>
-                <div class="workflow-step workflow-step-compact"><strong>Smaller archive</strong></div>
-                <div class="workflow-step"><strong>Reconstruct</strong></div>
-                <div class="workflow-step"><strong>Same pipeline to L1/L2</strong></div>
-              </div>
-            </div>
-            <div class="workflow-compare-output"><span>Compare L1/L2 products</span></div>
+            <svg class="workflow-join" viewBox="0 0 400 42" aria-hidden="true">
+              <path d="M100 1V10L200 31M300 1V10L200 31M200 31V39" />
+              <path d="M196 34L200 40L204 34" />
+            </svg>
+            <div class="workflow-compare-output"><span>Compare outputs</span></div>
           </div>
         </div>
       </div>

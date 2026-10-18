@@ -563,7 +563,7 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.25); }
   display: grid;
   gap: 8px;
   width: 100%;
-  max-width: 460px;
+  max-width: 540px;
   margin-inline: auto;
 }
 .workflow-input {
@@ -590,6 +590,29 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.25); }
   flex: 0 0 7px;
   border-radius: 50%;
   background: #a9b3ca;
+}
+.workflow-fork,
+.workflow-join {
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+.workflow-fork { height: 36px; }
+.workflow-join { height: 34px; }
+.workflow-fork path,
+.workflow-join path {
+  fill: none;
+  stroke: #69738e;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.workflow-join path { stroke: #77aef0; }
+.workflow-paths {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 12px;
 }
 .workflow-lane {
   padding: 10px;
@@ -620,11 +643,12 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.25); }
 .workflow-flow {
   display: grid;
   grid-template-columns: 1fr;
+  min-height: 118px;
+  align-content: space-between;
   gap: 8px;
 }
-.workflow-flow-noema .workflow-step-compact { background: rgba(106, 169, 255, 0.1); }
-.workflow-flow-noema .workflow-step-compact strong { color: #acd0ff; }
-.workflow-flow-noema .workflow-step-compact > span { color: #8bbcff; }
+.workflow-step-compact { background: rgba(106, 169, 255, 0.1); }
+.workflow-step-compact strong { color: #acd0ff; }
 .workflow-compare-output {
   display: flex;
   align-items: center;
@@ -670,7 +694,7 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.25); }
 }
 .workflow-lane-noema .workflow-step { border-color: rgba(106, 169, 255, 0.21); }
 .workflow-lane-noema .workflow-step:not(:last-child)::after { color: #70aef5; }
-.workflow-lane-noema .workflow-step:last-child { background: rgba(49, 102, 174, 0.2); }
+.workflow-lane-noema .workflow-step-compact { background: rgba(49, 102, 174, 0.2); }
 @media (max-width: 1024px) {
   .tech-advantages-grid {
     grid-template-columns: 1fr;
@@ -695,7 +719,20 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.25); }
     max-width: 320px;
   }
   .workflow-compare { max-width: none; }
+  .workflow-fork,
+  .workflow-join { display: none; }
+  .workflow-paths { grid-template-columns: 1fr; gap: 8px; }
+  .workflow-input { position: relative; margin-bottom: 8px; }
+  .workflow-input::after {
+    content: '↓';
+    position: absolute;
+    bottom: -20px;
+    color: #69738e;
+    font-size: 12px;
+    line-height: 1;
+  }
   .workflow-lane { padding: 12px; }
+  .workflow-flow { min-height: auto; gap: 8px; }
   .workflow-step { min-height: 42px; padding: 8px 11px; }
 }
 
