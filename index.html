@@ -176,7 +176,7 @@
     <div class="section-pad">
       <span class="kicker">Applications</span>
       <h2 class="section-h2">For SAR ingestion, archives, and distribution.</h2>
-      <p class="section-preamble">Compress raw SAR I/Q as it enters a workflow, store it in indexed archives, and distribute smaller datasets. The sidecar supports deterministic reconstruction of full signals or selected regions.</p>
+      <p class="section-preamble">Compress raw SAR I/Q at ingestion, retain it in indexed archives, and distribute it to downstream users. They can download the smaller full archive or use its index to retrieve only the signal blocks they need.</p>
     </div>
     <div class="cards-grid">
       <div class="who-card reveal">
@@ -205,8 +205,8 @@
         </div>
         <div class="card-body">
           <div class="card-cat">Distribution</div>
-          <div class="card-title">Move less data between endpoints.</div>
-          <p class="card-text">Distribute compressed SAR data, then use the sidecar index to locate and deterministically reconstruct full signals or selected blocks.</p>
+          <div class="card-title">Let users download what they need.</div>
+          <p class="card-text">Publish the compressed archive with its index. Downstream users can download the smaller full dataset or use the index to locate and retrieve only the signal blocks they need for deterministic reconstruction.</p>
         </div>
       </div>
     </div>
