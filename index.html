@@ -31,7 +31,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20261017">
+<link rel="stylesheet" href="css/style.css?v=20261018">
 </head>
 <body>
 
@@ -337,36 +337,24 @@
           <p>Designed to run alongside recorders, archives, processors, replay tools, and analysis workflows. Validate integration and throughput in the target pipeline.</p>
         </div>
         <div class="principle-diagram">
-          <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-            <text x="0" y="18" class="pd-label">Current workflow</text>
-            <text x="184" y="18" text-anchor="end" class="pd-label">Example</text>
-            <rect x="0" y="30" width="168" height="38" rx="6" fill="#121228" stroke="#3a3a60" stroke-width="0.75"/>
-            <text x="84" y="54" text-anchor="middle" fill="#e8e8f4" class="pd-mono">5.2 TB ARCHIVE</text>
-            <line x1="84" y1="68" x2="84" y2="88" stroke="#7070a0" stroke-width="1"/>
-            <path d="M80 84l4 5 4-5" fill="none" stroke="#7070a0" stroke-width="1"/>
-            <rect x="0" y="92" width="168" height="38" rx="6" fill="none" stroke="#D85A30" stroke-width="1"/>
-            <text x="84" y="116" text-anchor="middle" fill="#D85A30" class="pd-mono" style="font-size:10px;letter-spacing:0.04em">TRANSFER FULL ARCHIVE</text>
-            <line x1="84" y1="130" x2="84" y2="151" stroke="#7070a0" stroke-width="1"/>
-            <path d="M80 147l4 5 4-5" fill="none" stroke="#7070a0" stroke-width="1"/>
-            <text x="84" y="174" text-anchor="middle" fill="#7070a0" class="pd-mono">INSPECT 1 REGION</text>
-
-            <line x1="200" y1="0" x2="200" y2="280" stroke="#2a2a42" stroke-width="0.75"/>
-            <text x="220" y="18" class="pd-label">With Noema</text>
-            <text x="388" y="18" text-anchor="end" class="pd-label">Example</text>
-            <rect x="220" y="30" width="168" height="38" rx="6" fill="#121228" stroke="#3a3a60" stroke-width="0.75"/>
-            <text x="304" y="54" text-anchor="middle" fill="#e8e8f4" class="pd-mono">5.2 TB ARCHIVE</text>
-            <line x1="304" y1="68" x2="304" y2="88" stroke="#6aa9ff" stroke-width="1.25"/>
-            <path d="M300 84l4 5 4-5" fill="none" stroke="#6aa9ff" stroke-width="1.25"/>
-            <rect x="220" y="92" width="168" height="38" rx="6" fill="rgba(106,169,255,0.08)" stroke="#3a3a60" stroke-width="0.75"/>
-            <text x="304" y="116" text-anchor="middle" fill="#a8d0ff" class="pd-mono">INDEX LOCATES REGION</text>
-            <line x1="304" y1="130" x2="304" y2="151" stroke="#6aa9ff" stroke-width="1.25"/>
-            <path d="M300 147l4 5 4-5" fill="none" stroke="#6aa9ff" stroke-width="1.25"/>
-            <rect x="220" y="156" width="168" height="38" rx="6" fill="rgba(106,169,255,0.12)" stroke="#6aa9ff" stroke-width="1.5"/>
-            <text x="304" y="180" text-anchor="middle" fill="#6aa9ff" class="pd-mono" style="font-size:10px;letter-spacing:0.04em;font-weight:600">TRANSFER SELECTED REGION</text>
-            <line x1="304" y1="194" x2="304" y2="215" stroke="#6aa9ff" stroke-width="1.25"/>
-            <path d="M300 211l4 5 4-5" fill="none" stroke="#6aa9ff" stroke-width="1.25"/>
-            <text x="304" y="239" text-anchor="middle" fill="#a0a0c0" class="pd-mono" style="font-size:10px;letter-spacing:0.04em">RECONSTRUCT &amp; INSPECT</text>
-          </svg>
+          <div class="workflow-compare" aria-label="Workflow comparison">
+            <div class="workflow-lane workflow-lane-current">
+              <div class="workflow-lane-head"><span>Current workflow</span><span>Full archive transfer</span></div>
+              <div class="workflow-flow">
+                <div class="workflow-step"><span>01</span><strong>Archive</strong></div>
+                <div class="workflow-step"><span>02</span><strong>Transfer full archive</strong></div>
+                <div class="workflow-step"><span>03</span><strong>Inspect region</strong></div>
+              </div>
+            </div>
+            <div class="workflow-lane workflow-lane-noema">
+              <div class="workflow-lane-head"><span>With NOEMA</span><span>Indexed retrieval</span></div>
+              <div class="workflow-flow">
+                <div class="workflow-step"><span>01</span><strong>Archive + index</strong></div>
+                <div class="workflow-step"><span>02</span><strong>Select required blocks</strong></div>
+                <div class="workflow-step"><span>03</span><strong>Transfer, reconstruct, inspect</strong></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

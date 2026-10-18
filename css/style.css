@@ -559,6 +559,85 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.25); }
   text-transform: uppercase;
   fill: #b9bed8;
 }
+.workflow-compare {
+  display: grid;
+  gap: 12px;
+  width: 100%;
+  max-width: 560px;
+}
+.workflow-lane {
+  padding: 14px;
+  border: 1px solid rgba(185, 190, 216, 0.16);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.025);
+}
+.workflow-lane-noema {
+  border-color: rgba(106, 169, 255, 0.35);
+  background: linear-gradient(135deg, rgba(49, 102, 174, 0.13), rgba(255, 255, 255, 0.025));
+}
+.workflow-lane-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 11px;
+  color: #d9def0;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+.workflow-lane-head span:last-child {
+  color: #929bb7;
+  font-size: 9px;
+  font-weight: 500;
+  text-align: right;
+}
+.workflow-lane-noema .workflow-lane-head span:first-child { color: #8fc2ff; }
+.workflow-flow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+.workflow-step {
+  position: relative;
+  display: flex;
+  min-height: 66px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px;
+  border: 1px solid rgba(185, 190, 216, 0.16);
+  border-radius: 8px;
+  background: rgba(8, 10, 20, 0.42);
+}
+.workflow-step:not(:last-child)::after {
+  content: '→';
+  position: absolute;
+  top: 50%;
+  right: -13px;
+  color: #707a98;
+  font-size: 14px;
+  transform: translate(50%, -50%);
+}
+.workflow-step > span {
+  color: #828ba6;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+}
+.workflow-step strong {
+  color: #e6e9f3;
+  font-size: 12px;
+  font-weight: 550;
+  line-height: 1.35;
+}
+.workflow-lane-noema .workflow-step { border-color: rgba(106, 169, 255, 0.21); }
+.workflow-lane-noema .workflow-step:not(:last-child)::after { color: #70aef5; }
+.workflow-lane-noema .workflow-step > span { color: #79aeea; }
+.workflow-lane-noema .workflow-step:last-child { background: rgba(49, 102, 174, 0.2); }
 @media (max-width: 1024px) {
   .tech-advantages-grid {
     grid-template-columns: 1fr;
@@ -581,6 +660,17 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.25); }
   }
   .tech-advantages-grid .principle-diagram svg {
     max-width: 320px;
+  }
+  .workflow-compare { max-width: none; }
+  .workflow-lane { padding: 13px; }
+  .workflow-flow { grid-template-columns: 1fr; gap: 10px; }
+  .workflow-step { min-height: 54px; padding: 9px 11px; }
+  .workflow-step:not(:last-child)::after {
+    content: '↓';
+    top: auto;
+    right: 50%;
+    bottom: -14px;
+    transform: translateX(50%);
   }
 }
 
