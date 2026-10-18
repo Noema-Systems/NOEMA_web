@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
 <!-- Primary SEO -->
-<title>NOEMA Data Systems | Signal-Domain Compression for Radar, RF & SAR Data</title>
-<meta name="description" content="NOEMA provides high-fidelity signal-domain compression for radar, RF, SDR, and SAR I/Q datasets, with tested Level-0 SAR reductions from 2.3x to 8.6x."><meta name="google-site-verification" content="BHL0DWhGnLd-arw8l7Kx6vkCZDKRUcqgpB3OGjRSbCo" />
+<title>NOEMA | Deterministic Compression for Raw SAR Data</title>
+<meta name="description" content="NOEMA compresses raw SAR I/Q data for archives, pipelines, and distribution, with indexed deterministic reconstruction and measured fidelity."><meta name="google-site-verification" content="BHL0DWhGnLd-arw8l7Kx6vkCZDKRUcqgpB3OGjRSbCo" />
 <link rel="canonical" href="https://www.noemasystems.com/">
 
 <!-- Favicon (tab icon) -->
@@ -16,8 +16,8 @@
 <!-- Open Graph (Google rich results, LinkedIn, Slack previews) -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.noemasystems.com/">
-<meta property="og:title" content="NOEMA Data Systems | Signal-Domain Compression for Radar, RF & SAR Data">
-<meta property="og:description" content="NOEMA provides high-fidelity signal-domain compression for radar, RF, SDR, and SAR I/Q datasets, with tested Level-0 SAR reductions from 2.3x to 8.6x.">
+<meta property="og:title" content="NOEMA | Deterministic Compression for Raw SAR Data">
+<meta property="og:description" content="NOEMA compresses raw SAR I/Q data for archives, pipelines, and distribution, with indexed deterministic reconstruction and measured fidelity.">
 <meta property="og:image" content="https://www.noemasystems.com/images/noema_favicon.png">
 <meta property="og:image:width" content="64">
 <meta property="og:image:height" content="64">
@@ -25,8 +25,8 @@
 
 <!-- Twitter / X card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="NOEMA Data Systems | Signal-Domain Compression for Radar, RF & SAR Data">
-<meta name="twitter:description" content="NOEMA provides high-fidelity signal-domain compression for radar, RF, SDR, and SAR I/Q datasets. Compression performance is dataset-dependent.">
+<meta name="twitter:title" content="NOEMA | Deterministic Compression for Raw SAR Data">
+<meta name="twitter:description" content="Deterministic compression for raw SAR I/Q data, with indexed reconstruction and source-measured fidelity. Results are dataset-dependent.">
 <meta name="twitter:image" content="https://www.noemasystems.com/images/noema_favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -73,8 +73,8 @@
 
   <div class="hero-content">
     <div class="hero-badge"><span class="bdot"></span>SAR Data Compression</div>
-    <h1>Compress raw SAR I/Q.<br><em>Reconstruct it deterministically.</em></h1>
-    <p class="hero-sub">NOEMA applies lossy, high-fidelity compression to SAR signal data. An indexed sidecar preserves decode instructions for deterministic reconstruction of full signals or selected blocks, with fidelity measured against the source.</p>
+    <h1>Raw SAR data, compressed.<br><em>Deterministic reconstruction.</em></h1>
+    <p class="hero-sub">NOEMA applies lossy, high-fidelity compression to raw SAR I/Q for archives, processing pipelines, and distribution. An indexed sidecar supports deterministic reconstruction of full signals or selected blocks, with fidelity measured against the source.</p>
     <div class="hero-actions">
       <a class="btn-white" href="mailto:info@noemasystems.com">Contact</a>
       <button class="btn-outline" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">Explore the workflow &rarr;</button>
@@ -83,7 +83,7 @@
 
   <div class="hero-stat">
     <div class="ratio-big"><span>2.3-8.6</span><span class="ratio-x">x</span></div>
-    <div class="ratio-label">on tested SAR archives</div>
+    <div class="ratio-label">across tested SAR datasets</div>
     <div class="ratio-sub">DATASET-DEPENDENT · TESTED ON LEVEL-0 SAR DATA · SIDECAR AND CODEBOOK ADDITIONAL</div>
   </div>
 
@@ -103,32 +103,32 @@
   <div id="how">
     <div class="section-pad" style="border-top: none; padding-top: 0;">
       <span class="kicker">How it works</span>
-      <h2 class="section-h2">SAR signal compression and reconstruction.</h2>
-      <p class="section-preamble">NOEMA is a compression codec for raw SAR I/Q data with an index that allows selective decoding of regions. Results are dataset-dependent; testing uses Level-0 SAR products.</p>
+      <h2 class="section-h2">Compress, index, reconstruct, verify.</h2>
+      <p class="section-preamble">NOEMA reduces raw SAR I/Q data for storage, transfer, and use in processing pipelines. Its indexed sidecar supports deterministic reconstruction of complete files or selected signal regions. Compression is lossy; fidelity is measured against the source. Results are dataset-dependent.</p>
     </div>
     <div class="ops-grid">
       <div class="op-card reveal">
         <div class="op-num">01 Intake</div>
-        <div class="op-title">Raw signal data enters NOEMA.</div>
-        <p class="op-desc">The codec processes Level-0 SAR I/Q and can be configured around fidelity and throughput requirements.</p>
+        <div class="op-title">Ingest raw SAR I/Q.</div>
+        <p class="op-desc">Process raw SAR signal data from an archive or pipeline, with throughput and fidelity requirements defined for the workflow.</p>
         <div class="op-specs"><span>Raw I/Q data</span><span>Level-0 signal data</span><span>Runs from defaults</span></div>
       </div>
       <div class="op-card reveal">
         <div class="op-num">02 Compress</div>
-        <div class="op-title">Create a smaller working archive.</div>
+        <div class="op-title">Compress for storage and transfer.</div>
         <p class="op-desc">NOEMA compresses signal data according to the statistical profile of each dataset. Compression performance depends on format, entropy, quantization, and fidelity target.</p>
         <div class="op-specs"><span>2.3-8.6x tested range</span><span>Dataset-dependent results</span><span>Batch processing</span></div>
       </div>
       <div class="op-card reveal">
         <div class="op-num">03 Index and store</div>
-        <div class="op-title">Keep the compressed archive usable.</div>
-        <p class="op-desc">Sidecar metadata records file structure, decode locations, reconstruction settings, and verification context so selected files or regions can be accessed later.</p>
+        <div class="op-title">Index the compressed data.</div>
+        <p class="op-desc">The sidecar records file structure, decode locations, reconstruction settings, and verification context. This keeps the archive usable and lets workflows locate selected files or regions.</p>
         <div class="op-specs"><span>Indexed working archive</span><span>Region-based access</span><span>On-premises · Air-gapped · Cloud</span></div>
       </div>
       <div class="op-card reveal">
         <div class="op-num">04 Reconstruct and verify</div>
-        <div class="op-title">Use the data downstream.</div>
-        <p class="op-desc">Reconstruct full files or selected signal regions for replay, analysis, validation, model-development workflows, or existing ground-processing pipelines. Reconstruction quality is measured with signal-level metrics.</p>
+        <div class="op-title">Reconstruct and verify.</div>
+        <p class="op-desc">Deterministically reconstruct full files or selected signal regions for replay, analysis, validation, or downstream processing. Measure reconstruction fidelity against the source using signal-level metrics.</p>
         <div class="op-specs"><span>SNR verified</span><span>RMSE measured</span><span>Correlation checked</span></div>
       </div>
     </div>
@@ -137,8 +137,8 @@
     <div class="pipeline-wrap reveal">
       <div class="pipeline-flow">
         <div class="pipe-node">
-          <div class="node-label">Example dataset</div>
-          <div class="node-val" id="pipe-source">50 TB</div>
+          <div class="node-label">Illustrative dataset</div>
+          <div class="node-val" id="pipe-source">5.2 TB</div>
           <div class="node-note">raw signal data</div>
         </div>
         <div class="pipe-arrow">&rarr;</div>
@@ -149,25 +149,25 @@
         </div>
         <div class="pipe-arrow">&rarr;</div>
         <div class="pipe-node">
-          <div class="node-label">Working archive</div>
+          <div class="node-label">Compressed output estimate</div>
           <div class="node-val" id="pipe-compressed">2.3-0.6 TB</div>
           <div class="node-note" id="pipe-saved">57-88% smaller</div>
         </div>
         <div class="pipe-arrow">&rarr;</div>
         <div class="pipe-node">
-          <div class="node-label">Selective access</div>
+          <div class="node-label">Indexed selective access</div>
           <div class="node-val">File / Region</div>
           <div class="node-note">window level access</div>
         </div>
         <div class="pipe-arrow">&rarr;</div>
-        <div class="pipe-node"><div class="node-label">Reconstruct</div><div class="node-val" id="pipe-reconstruct">50 TB</div><div class="node-note">fidelity-audited output</div></div>
+        <div class="pipe-node"><div class="node-label">Reconstruct</div><div class="node-val" id="pipe-reconstruct">5.2 TB</div><div class="node-note">fidelity-audited output</div></div>
       </div>
       <div class="ratio-slider">
         <label>Example dataset size</label>
         <input type="range" id="dataset-slider" min="0" max="100" step="1" value="68">
-        <span class="ratio-value" id="dataset-display">50 TB</span>
+        <span class="ratio-value" id="dataset-display">5.2 TB</span>
       </div>
-      <div class="validation-note">Compression ratios are dataset-dependent &middot; Tested on Level-0 SAR data &middot; Results vary by format, entropy, quantization, and fidelity target</div>
+      <div class="validation-note">Illustrative size estimate from the tested ratio range; sidecar and codebook excluded &middot; Actual results depend on dataset, format, entropy, quantization, and fidelity target</div>
     </div>
   </div>
 
@@ -175,8 +175,8 @@
   <div id="for">
     <div class="section-pad">
       <span class="kicker">Applications</span>
-      <h2 class="section-h2">Designed for raw SAR archives and processing.</h2>
-      <p class="section-preamble">NOEMA can be used in SAR mission, archive, and processing workflows to reduce raw I/Q volume, reconstruct selected signal blocks, and measure reconstruction fidelity.</p>
+      <h2 class="section-h2">For SAR archives, pipelines, and distribution.</h2>
+      <p class="section-preamble">Use NOEMA where raw SAR data needs to be stored, moved, or processed. Compression can reduce archive size and transfer volume; indexed access supports deterministic reconstruction of complete files or selected regions.</p>
     </div>
     <div class="cards-grid">
       <div class="who-card reveal">
@@ -184,9 +184,9 @@
           <img src="images/sat11.webp" alt="Satellite in orbit" loading="lazy">
         </div>
         <div class="card-body">
-          <div class="card-cat">SAR missions & ground systems</div>
-          <div class="card-title">Reduce the raw SAR payload.</div>
-          <p class="card-text">Compress Level-0 SAR I/Q into a smaller bitstream with indexed metadata. Level-0 SAR products have been used in testing.</p>
+          <div class="card-cat">Archives & data centers</div>
+          <div class="card-title">Store more raw SAR data.</div>
+          <p class="card-text">Compress raw I/Q to reduce archive storage requirements while retaining indexed decode locations and reconstruction metadata.</p>
         </div>
       </div>
       <div class="who-card reveal">
@@ -194,9 +194,9 @@
           <img src="images/sar-earth-hero.png" alt="SAR-inspired Earth illustration" loading="lazy">
         </div>
         <div class="card-body">
-          <div class="card-cat">SAR archives & data centers</div>
-          <div class="card-title">Selective decoding from indexed archives.</div>
-          <p class="card-text">The sidecar index locates signal blocks for selective reconstruction without decoding the entire bitstream. This supports access to subsets of an archive for analysis and reprocessing.</p>
+          <div class="card-cat">Processing pipelines</div>
+          <div class="card-title">Move less data between stages.</div>
+          <p class="card-text">Use compressed SAR data in archive and processing workflows, then reconstruct complete files or selected blocks when downstream stages need them.</p>
         </div>
       </div>
       <div class="who-card reveal">
@@ -204,9 +204,9 @@
           <img src="images/sar-coast.jpg" alt="SIR-C/X-SAR radar image of County Kerry, Ireland; NASA/JPL" loading="lazy">
         </div>
         <div class="card-body">
-          <div class="card-cat">SAR processing & research</div>
-          <div class="card-title">Measure signal fidelity after reconstruction.</div>
-          <p class="card-text">Round-trip comparisons use SNR, normalized error, and correlation. Focused-image quality and downstream processing require separate validation.</p>
+          <div class="card-cat">Distribution & access</div>
+          <div class="card-title">Retrieve selected regions.</div>
+          <p class="card-text">The sidecar index locates signal blocks for selective reconstruction without decoding the entire compressed stream. This can reduce data movement when a workflow needs only part of a dataset. Transfer savings depend on the access path.</p>
         </div>
       </div>
     </div>
@@ -216,14 +216,14 @@
   <div id="principles">
     <div class="section-pad">
       <span class="kicker">Technical advantages</span>
-      <h2 class="section-h2">Sidecar index. Shared codebook. Verified reconstruction.</h2>
+      <h2 class="section-h2">Deterministic decoding. Indexed access. Measured fidelity.</h2>
     </div>
     <div class="tech-advantages-grid">
       <div class="principle reveal">
         <div class="principle-text">
           <div class="principle-eyebrow">01 SELECTIVE DECODE</div>
-          <h4>Region-based access</h4>
-          <p>NOEMA sidecar metadata enables decoding of specific regions, time windows, or segments without full archive reconstruction, reducing unnecessary data movement during access.</p>
+          <h4>Indexed region access</h4>
+          <p>Sidecar metadata maps signal regions and blocks to their decode information. Workflows can locate and reconstruct selected regions without reconstructing the complete archive.</p>
         </div>
         <div class="principle-diagram">
           <svg viewBox="0 0 340 250" xmlns="http://www.w3.org/2000/svg">
@@ -303,9 +303,9 @@
       </div>
       <div class="principle reveal">
         <div class="principle-text">
-          <div class="principle-eyebrow">03 VERIFIED RECONSTRUCTION</div>
-          <h4>Auditability</h4>
-          <p>Sidecar metadata records what was compressed, how it was reconstructed, and which fidelity metrics were measured for every file.</p>
+          <div class="principle-eyebrow">03 DETERMINISTIC RECONSTRUCTION</div>
+          <h4>Repeatable decoding, measured fidelity</h4>
+          <p>The same compressed data and decode metadata produce a repeatable reconstruction. Compression is lossy, so output is compared with the source using SNR, normalized error, and correlation. This does not imply lossless recovery of the original samples.</p>
         </div>
         <div class="principle-diagram">
           <svg viewBox="0 0 340 270" xmlns="http://www.w3.org/2000/svg">
@@ -335,7 +335,7 @@
         <div class="principle-text">
           <div class="principle-eyebrow">04 WORKFLOW COMPATIBILITY</div>
           <h4>Runs beside existing systems</h4>
-          <p>Designed to work with existing recorders, archives, processors, replay tools, and analysis workflows during evaluation.</p>
+          <p>Designed for evaluation alongside existing recorders, archives, processors, replay tools, and analysis workflows. Integration and throughput should be validated in each target pipeline.</p>
         </div>
         <div class="principle-diagram">
           <svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
@@ -345,7 +345,7 @@
             <text x="84" y="53" text-anchor="middle" fill="#a0a0c0" class="pd-mono">5.2 TB ARCHIVE</text>
             <line x1="84" y1="66" x2="84" y2="88" stroke="#3a3a60" stroke-width="0.75"/>
             <rect x="0" y="88" width="168" height="34" rx="6" fill="none" stroke="#D85A30" stroke-width="0.75"/>
-            <text x="84" y="110" text-anchor="middle" fill="#D85A30" class="pd-mono">DOWNLOAD 5.2 TB</text>
+            <text x="84" y="110" text-anchor="middle" fill="#D85A30" class="pd-mono">TRANSFER FULL ARCHIVE</text>
             <line x1="84" y1="122" x2="84" y2="144" stroke="#3a3a60" stroke-width="0.75"/>
             <text x="84" y="166" text-anchor="middle" fill="#7070a0" class="pd-mono">INSPECT 1 REGION</text>
             <line x1="196" y1="0" x2="196" y2="270" stroke="#2a2a42" stroke-width="0.75"/>
@@ -356,7 +356,7 @@
             <text x="304" y="110" text-anchor="middle" fill="#7070a0" class="pd-mono">LOCATE REGION</text>
             <line x1="304" y1="118" x2="304" y2="140" stroke="#6aa9ff" stroke-width="1.25"/>
             <rect x="220" y="140" width="168" height="34" rx="6" fill="rgba(106,169,255,0.12)" stroke="#6aa9ff" stroke-width="1.5"/>
-            <text x="304" y="162" text-anchor="middle" fill="#6aa9ff" class="pd-mono" style="font-weight:600">DOWNLOAD 40 MB</text>
+            <text x="304" y="162" text-anchor="middle" fill="#6aa9ff" class="pd-mono" style="font-weight:600">TRANSFER SELECTED BLOCKS</text>
             <line x1="304" y1="174" x2="304" y2="196" stroke="#3a3a60" stroke-width="0.75"/>
             <text x="304" y="218" text-anchor="middle" fill="#7070a0" class="pd-mono">INSPECT REGION</text>
           </svg>
@@ -375,7 +375,7 @@
             <span class="shadow-badge-text">CAN RUN ALONGSIDE AN EXISTING PIPELINE</span>
           </div>
           <div class="tryit-heading">Evaluation workflow</div>
-          <p class="tryit-sub">An evaluation can run in shadow mode alongside an existing workflow. Compare compression ratio, storage reduction, reconstruction fidelity, and selective decode behavior on representative SAR data.</p>
+          <p class="tryit-sub">An evaluation can run in shadow mode alongside an existing workflow. Compare compression ratio, archive-size reduction, transfer volume, reconstruction fidelity, and selective-decode behavior on representative SAR data.</p>
           <div class="tryit-badge-section">
             <div class="tryit-badge-track">
               <div class="tryit-badge-line">ON-PREMISES &middot; AIR-GAPPED &middot; CLOUD</div>
