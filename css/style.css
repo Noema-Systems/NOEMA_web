@@ -930,6 +930,8 @@ footer {
   letter-spacing: 0.1em; text-transform: uppercase;
   color: var(--dim);
 }
+.privacy-link { color: var(--mid); text-decoration: none; transition: color 0.25s; }
+.privacy-link:hover { color: var(--white); text-decoration: underline; }
 
 /* ---- REVEAL ---- */
 .reveal {
